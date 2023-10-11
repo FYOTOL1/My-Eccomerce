@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  list-style: none;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1400px;
+  background-color: #f4f5f9;
+  margin: 0 auto;
+}

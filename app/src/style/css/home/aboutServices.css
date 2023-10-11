@@ -1,0 +1,164 @@
+.about_services {
+  min-height: 850px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.about_services .popular,
+.about_services .featured {
+  width: 100%;
+  min-height: 325px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 40px;
+}
+.about_services .popular h2,
+.about_services .featured h2 {
+  text-transform: capitalize;
+}
+.about_services .popular .cards,
+.about_services .featured .cards {
+  margin-top: 30px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-grid-columns: 225px 10px 225px 10px 225px 10px 225px 10px 225px 10px 225px;
+  grid-template-columns: repeat(6, 225px);
+  overflow: hidden;
+}
+.about_services .popular .cards .card,
+.about_services .featured .cards .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 325px;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-shadow: 0 0 3px rgba(128, 128, 128, 0.2156862745);
+          box-shadow: 0 0 3px rgba(128, 128, 128, 0.2156862745);
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+.about_services .popular .cards .card .imgParent,
+.about_services .featured .cards .card .imgParent {
+  width: 100%;
+  height: 180px;
+}
+.about_services .popular .cards .card .imgParent .img,
+.about_services .featured .cards .card .imgParent .img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.about_services .popular .cards .card h3,
+.about_services .featured .cards .card h3 {
+  text-align: center;
+  color: #333;
+}
+.about_services .popular .cards .card .desc,
+.about_services .featured .cards .card .desc {
+  text-align: center;
+  max-width: 100%;
+  margin-top: 15px;
+}
+.about_services .popular .cards .card .info,
+.about_services .featured .cards .card .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+}
+.about_services .popular .cards .card .info .rate,
+.about_services .featured .cards .card .info .rate {
+  color: gold;
+}
+.about_services .popular .cards .card .info .rate .fa-star-half-stroke,
+.about_services .popular .cards .card .info .rate .fa-regular,
+.about_services .featured .cards .card .info .rate .fa-star-half-stroke,
+.about_services .featured .cards .card .info .rate .fa-regular {
+  color: gray;
+}
+.about_services .popular .cards .card .info .price,
+.about_services .featured .cards .card .info .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 1px;
+}
+@media (max-width: 1425px) {
+  .about_services .popular .cards,
+  .about_services .featured .cards {
+    -ms-grid-columns: (225px)[5];
+    grid-template-columns: repeat(5, 225px);
+  }
+}
+@media (max-width: 1190px) {
+  .about_services .popular .cards,
+  .about_services .featured .cards {
+    -ms-grid-columns: (225px)[4];
+    grid-template-columns: repeat(4, 225px);
+  }
+}
+@media (max-width: 955px) {
+  .about_services .popular .cards,
+  .about_services .featured .cards {
+    -ms-grid-columns: (250px)[3];
+    grid-template-columns: repeat(3, 250px);
+  }
+  .about_services .popular .cards .card,
+  .about_services .featured .cards .card {
+    height: 350px;
+  }
+}
+@media (max-width: 795px) {
+  .about_services .popular .cards,
+  .about_services .featured .cards {
+    -ms-grid-columns: (210px)[4];
+    grid-template-columns: repeat(4, 210px);
+  }
+}
+@media (max-width: 794px) {
+  .about_services .popular .cards,
+  .about_services .featured .cards {
+    -ms-grid-columns: (200px)[6];
+    grid-template-columns: repeat(6, 200px);
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+  .about_services .popular .cards::-webkit-scrollbar,
+  .about_services .featured .cards::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,103 @@
+.offers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+  height: 200px;
+  width: 100%;
+}
+.offers .offer {
+  position: relative;
+  width: 33.3333333333%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.offers .offer .img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 55% !important;
+  height: 100% !important;
+  margin-left: auto;
+  max-width: 50% !important;
+}
+.offers .offer .details {
+  position: absolute;
+  left: 0;
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.offers .offer .details p:nth-child(1) {
+  font-size: 25px;
+}
+.offers .offer .details p:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: gray;
+}
+.offers .offer .details p:nth-child(2) {
+  max-width: 280px;
+  margin: 10px 0;
+}
+.offers .offer .details p:nth-child(3) {
+  position: relative;
+}
+.offers .offer .details p:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -5px;
+  width: 3px;
+  height: 100%;
+  background: rgba(255, 87, 34, 0.8196078431);
+}
+@media (max-width: 820px) {
+  .offers {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 500px;
+    gap: 5px;
+  }
+  .offers .offer {
+    width: 90%;
+    max-width: 90%;
+    -webkit-box-shadow: 0 0 4px rgba(128, 128, 128, 0.13);
+            box-shadow: 0 0 4px rgba(128, 128, 128, 0.13);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .offers .offer:hover {
+    -webkit-filter: brightness(0.9);
+            filter: brightness(0.9);
+  }
+  .offers .offer:first-child {
+    margin-top: 5px;
+  }
+}

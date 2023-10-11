@@ -1,0 +1,40 @@
+.other_offers {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .cards {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .card {
+      height: 100%;
+      width: 32%;
+      background: #fff;
+      border-radius: 4px;
+      object-fit: cover;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 5px 5px 4px rgba(128, 128, 128, 0.138);
+      .img {
+        position: absolute;
+        width: 60%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:first-child {
+        .img {
+          transform: translate(-50%, -50%) rotate(25deg);
+        }
+      }
+      &:last-child {
+        .img {
+          transform: translate(-50%, -50%) rotate(5deg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.deals {
+  margin-top: 40px;
+  height: 450px;
+  width: 100%;
+  background-color: #eee;
+  background-image: url("../../../../public/images/stars_of_space.jpg");
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.deals > .img {
+  width: 100%;
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+}
+.deals .deal {
+  padding: 0 10px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 30px;
+  overflow-x: scroll;
+}
+.deals .deal .text {
+  font-size: 28px;
+  color: whitesmoke;
+  font-weight: bold;
+}
+.deals .deal .cards {
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: 240px 10px 240px 10px 240px 10px 240px;
+  grid-template-columns: repeat(4, 240px);
+}
+.deals .deal .cards .card {
+  height: 325px;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-shadow: 0 0 3px rgba(128, 128, 128, 0.2156862745);
+          box-shadow: 0 0 3px rgba(128, 128, 128, 0.2156862745);
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+.deals .deal .cards .card .imgParent {
+  width: 100% !important;
+  height: 180px !important;
+}
+.deals .deal .cards .card .imgParent .img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100% !important;
+}
+.deals .deal .cards .card h3 {
+  text-align: center;
+  color: #333;
+}
+.deals .deal .cards .card .desc {
+  text-align: center;
+  max-width: 100%;
+  margin-top: 15px;
+}
+.deals .deal .cards .card .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+}
+.deals .deal .cards .card .info .rate {
+  color: gold;
+}
+.deals .deal .cards .card .info .rate .fa-star-half-stroke,
+.deals .deal .cards .card .info .rate .fa-regular {
+  color: gray;
+}
+.deals .deal .cards .card .info .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 1px;
+}
+@media (min-width: 1169px) {
+  .deals .deal {
+    scrollbar-width: none;
+  }
+  .deals .deal::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 850px) {
+  .deals .deal {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .deals .deal .cards {
+    -ms-grid-columns: (240px)[3];
+    grid-template-columns: repeat(3, 240px);
+  }
+  .deals .deal .cards .card:last-child {
+    display: none;
+  }
+}

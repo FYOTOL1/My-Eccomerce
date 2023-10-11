@@ -1,0 +1,122 @@
+.about_services {
+  min-height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .popular,
+  .featured {
+    width: 100%;
+    min-height: 325px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    h2 {
+      text-transform: capitalize;
+    }
+
+    .cards {
+      margin-top: 30px;
+      width: 100%;
+      display: grid;
+      gap: 10px;
+      justify-content: space-between;
+      grid-template-columns: repeat(6, 225px);
+      overflow: hidden;
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 325px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 0 3px #80808037;
+        border-radius: 4px;
+        padding: 10px 20px;
+
+        .imgParent {
+          width: 100%;
+          height: 180px;
+          .img {
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+
+        h3 {
+          text-align: center;
+          color: #333;
+        }
+
+        .desc {
+          text-align: center;
+          max-width: 100%;
+          margin-top: 15px;
+        }
+
+        .info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 25px;
+
+          .rate {
+            color: gold;
+
+            .fa-star-half-stroke,
+            .fa-regular {
+              color: gray;
+            }
+          }
+
+          .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1425px) {
+      .cards {
+        grid-template-columns: repeat(5, 225px);
+      }
+    }
+
+    @media (max-width: 1190px) {
+      .cards {
+        grid-template-columns: repeat(4, 225px);
+      }
+    }
+
+    @media (max-width: 955px) {
+      .cards {
+        grid-template-columns: repeat(3, 250px);
+
+        .card {
+          height: 350px;
+        }
+      }
+    }
+
+    @media (max-width: 795px) {
+      .cards {
+        grid-template-columns: repeat(4, 210px);
+      }
+    }
+
+    @media (max-width: 794px) {
+      .cards {
+        grid-template-columns: repeat(6, 200px);
+        overflow-x: scroll;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+}
