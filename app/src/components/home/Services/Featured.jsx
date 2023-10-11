@@ -1,13 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "../../../style/css/home/aboutServices.css";
 
-export default function Featured({ Store }) {
+export default function Featured() {
+  const Store = useSelector((state) => state?.featured);
   return (
     <div className="featured">
       <h2>featured services</h2>
       <div className="cards">
         {Store &&
-          Store?.map((e) => (
+          Store?.data?.map((e) => (
             <div key={e?._id} className="card">
               <div className="imgParent">
                 <img className="img" src={e?.img} alt={e?.name} />

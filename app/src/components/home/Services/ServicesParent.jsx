@@ -8,7 +8,6 @@ import "../../../style/css/home/aboutServices.css";
 
 export default function PopularProducts() {
   const popular = useSelector((state) => state?.popular?.data);
-  const featured = useSelector((state) => state?.featured?.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +18,7 @@ export default function PopularProducts() {
   return (
     <div className="about_services">
       <Popular Store={popular} />
-      <Featured Store={featured} />
+      <Featured />
     </div>
   );
 }
