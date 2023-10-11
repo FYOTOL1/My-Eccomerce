@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../../style/css/home/aboutServices.css";
 import { useSelector } from "react-redux";
 
 export default function Popular() {
   const Store = useSelector((state) => state?.popular);
+  const [data, setdata] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const maping = () => {
     return (
       Store &&
@@ -34,11 +36,14 @@ export default function Popular() {
     );
   };
 
+  useEffect(() => {
+    setdata(maping());
+  }, [maping]);
   return (
     <>
       <div className="popular">
         <h2>popular services</h2>
-        <div className="cards">{maping().length ? maping() : null}</div>
+        <div className="cards">{Store.length ? data : null}</div>
       </div>
     </>
   );
