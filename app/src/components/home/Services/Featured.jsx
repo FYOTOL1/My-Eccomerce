@@ -7,13 +7,13 @@ export default function Featured({ Store }) {
       <h2>featured services</h2>
       <div className="cards">
         {Store?.data?.map((e) => (
-          <div key={e._id} className="card">
+          <div key={e?._id} className="card">
             <div className="imgParent">
-              <img className="img" src={e.img} alt={e.name} />
+              <img className="img" src={e?.img} alt={e?.name} />
             </div>
-            <h3>{e.name}</h3>
+            <h3>{e?.name}</h3>
             <div className="desc">
-              <p>{e.info}</p>
+              <p>{e?.info}</p>
             </div>
             <div className="info">
               <div className="rate">
@@ -25,7 +25,7 @@ export default function Featured({ Store }) {
               </div>
               <p className="price">
                 <span>$</span>
-                {e.price}
+                {e?.price}
               </p>
             </div>
           </div>
