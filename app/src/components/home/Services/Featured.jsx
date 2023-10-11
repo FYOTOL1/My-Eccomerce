@@ -6,7 +6,7 @@ export default function Featured({ Store }) {
     <div className="featured">
       <h2>featured services</h2>
       <div className="cards">
-        {Store?.data?.map((e) => (
+        {Store?.map((e) => (
           <div key={e?._id} className="card">
             <div className="imgParent">
               <img className="img" src={e?.img} alt={e?.name} />

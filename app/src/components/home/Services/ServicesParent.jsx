@@ -7,8 +7,8 @@ import Featured from "./Featured";
 import "../../../style/css/home/aboutServices.css";
 
 export default function PopularProducts() {
-  const popular = useSelector((state) => state?.popular);
-  const featured = useSelector((state) => state?.featured);
+  const popular = useSelector((state) => state?.popular?.data);
+  const featured = useSelector((state) => state?.featured?.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
