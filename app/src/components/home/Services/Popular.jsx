@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../../style/css/home/aboutServices.css";
 import { useSelector } from "react-redux";
 
 export default function Popular() {
   const Store = useSelector((state) => state?.popular);
-  const [data, setdata] = useState([]);
   const maping = () => {
     return (
       Store &&
@@ -35,14 +34,11 @@ export default function Popular() {
     );
   };
 
-  useEffect(() => {
-    setdata(maping());
-  }, []);
   return (
     <>
       <div className="popular">
         <h2>popular services</h2>
-        <div className="cards">{data && data}</div>
+        <div className="cards">{maping().length ? maping() : null}</div>
       </div>
     </>
   );

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import "../../../style/css/home/aboutServices.css";
 
 export default function Featured() {
   const Store = useSelector((state) => state?.featured);
-  const [data, setdata] = useState([]);
+
   const maping = () => {
     return (
       Store &&
@@ -35,13 +35,10 @@ export default function Featured() {
     );
   };
 
-  useEffect(() => {
-    setdata(maping());
-  }, []);
   return (
     <div className="featured">
       <h2>featured services</h2>
-      <div className="cards">{data && data}</div>
+      <div className="cards">{maping().length ? maping() : null}</div>
     </div>
   );
 }
