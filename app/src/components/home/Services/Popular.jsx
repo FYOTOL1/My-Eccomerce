@@ -4,19 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { GetPopularServices } from "../../../Redux/slices/popularServicesSlice";
 
 export default function Popular() {
-  // const Store = useSelector((state) => state.popular);
-  // const dispatch = useDispatch();
+  const Store = useSelector((state) => state.popular);
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(GetPopularServices());
-  // }, []);
+  useEffect(() => {
+    dispatch(GetPopularServices());
+  }, []);
 
   return (
     <>
       <div className="popular">
         <h2>popular services</h2>
         <div className="cards">
-          {/* {Store.data &&
+          {Store.data &&
             Store?.data?.map((e) => (
               <div key={e?._id} className="card">
                 <div className="imgParent">
@@ -40,7 +40,7 @@ export default function Popular() {
                   </p>
                 </div>
               </div>
-            ))} */}
+            ))}
         </div>
       </div>
     </>
