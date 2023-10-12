@@ -1,48 +1,46 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "../../../style/css/home/aboutServices.css";
+import { GetFeaturedServices } from "../../../Redux/slices/featuredServicesSlice";
 
 export default function Featured() {
   const Store = useSelector((state) => state?.featured);
-  const [data, setdata] = useState([]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const maping = () => {
-    return (
-      Store &&
-      Store?.data?.map((e) => (
-        <div key={e?._id} className="card">
-          <div className="imgParent">
-            <img className="img" src={e?.img} alt={e?.name} />
-          </div>
-          <h3>{e?.name}</h3>
-          <div className="desc">
-            <p>{e?.info}</p>
-          </div>
-          <div className="info">
-            <div className="rate">
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star-half-stroke"></i>
-            </div>
-            <p className="price">
-              <span>$</span>
-              {e?.price}
-            </p>
-          </div>
-        </div>
-      ))
-    );
-  };
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setdata(maping());
-  }, [maping]);
+    dispatch(GetFeaturedServices());
+  }, []);
+
   return (
     <div className="featured">
       <h2>featured services</h2>
-      <div className="cards">{Store.length ? data : null}</div>
+      <div className="cards">
+        {Store.data &&
+          Store?.data?.map((e) => (
+            <div key={e?._id} className="card">
+              <div className="imgParent">
+                <img className="img" src={e?.img} alt={e?.name} />
+              </div>
+              <h3>{e?.name}</h3>
+              <div className="desc">
+                <p>{e?.info}</p>
+              </div>
+              <div className="info">
+                <div className="rate">
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p className="price">
+                  <span>$</span>
+                  {e?.price}
+                </p>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
