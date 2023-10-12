@@ -6,12 +6,8 @@ export const GetFeaturedServices = createAsyncThunk(
   async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      return await axios
-        .get("/services/featured")
-        .then((res) => res?.data)
-        .catch((err) => {
-          console.log(err);
-        });
+      const response = await axios.get("/services/featured");
+      return response.data;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -29,12 +25,12 @@ const featuredServicesSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(GetFeaturedServices.pending, (state) => {
       state.loading = true;
-      state.error = "null";
+      state.error = "";
     });
     builder.addCase(GetFeaturedServices.fulfilled, (state, { payload }) => {
       state.data = payload;
       state.loading = false;
-      state.error = "null";
+      state.error = "";
       console.log(payload);
     });
     builder.addCase(GetFeaturedServices.rejected, (state, { payload }) => {
