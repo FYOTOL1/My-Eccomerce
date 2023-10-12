@@ -9,7 +9,7 @@ export default function Featured() {
 
   useEffect(() => {
     dispatch(GetFeaturedServices());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="featured">

@@ -9,7 +9,7 @@ export default function Popular() {
 
   useEffect(() => {
     dispatch(GetPopularServices());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
