@@ -6,8 +6,12 @@ export const GetFeaturedServices = createAsyncThunk(
   async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const Fetch_Axios = await axios.get("services/featured");
-      return Fetch_Axios?.data;
+      return await axios
+        .get("/services/featured")
+        .then((res) => res?.data)
+        .catch((err) => {
+          console.log(err);
+        });
     } catch (error) {
       return rejectWithValue(error);
     }
