@@ -30,12 +30,9 @@ const featuredServicesSlice = createSlice({
     builder.addCase(GetFeaturedServices.fulfilled, (state, { payload }) => {
       state.data = payload;
       state.loading = false;
-      state.error = "";
-      console.log(payload);
     });
     builder.addCase(GetFeaturedServices.rejected, (state, { payload }) => {
-      state.error = `${payload}`;
-      console.log(payload);
+      state.error = payload;
     });
   },
 });
