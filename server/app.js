@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://3ayez.vercel.app/*",
+    origin: "https://3ayez.vercel.app/",
   })
 );
 
