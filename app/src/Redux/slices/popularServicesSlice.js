@@ -6,9 +6,7 @@ export const GetPopularServices = createAsyncThunk(
   async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const response = await axios.get(
-        "https://backend-fn1s.onrender.com/services/popular"
-      );
+      const response = await axios.get("/services/popular");
       return response.data;
     } catch (error) {
       return rejectWithValue(error);
