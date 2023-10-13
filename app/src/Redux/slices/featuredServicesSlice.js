@@ -6,7 +6,9 @@ export const GetFeaturedServices = createAsyncThunk(
   async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const response = await axios.get("/services/featured");
+      const response = await axios.get(
+        "https://backend-fn1s.onrender.com/services/featured"
+      );
       return response.data;
     } catch (error) {
       return rejectWithValue(error);
