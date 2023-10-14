@@ -87,7 +87,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      button {
+
+      .Link {
+        font-weight: normal;
         border: none;
         cursor: pointer;
         background: transparent;
@@ -103,7 +105,9 @@
     }
     .download {
       transition: all 0.3s;
-      button {
+
+      .Link {
+        font-weight: normal;
         font-size: 15px;
         border: none;
         cursor: pointer;

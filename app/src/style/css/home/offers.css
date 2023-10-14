@@ -3,11 +3,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 3px;
   height: 200px;
   width: 100%;
@@ -22,15 +22,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -ms-flex-pack: end;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .offers .offer .img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 55% !important;
   height: 100% !important;
   margin-left: auto;
@@ -68,7 +67,7 @@
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   left: -5px;
   width: 3px;
   height: 100%;
@@ -78,8 +77,8 @@
   .offers {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     height: 500px;
     gap: 5px;
   }
@@ -87,7 +86,7 @@
     width: 90%;
     max-width: 90%;
     -webkit-box-shadow: 0 0 4px rgba(128, 128, 128, 0.13);
-            box-shadow: 0 0 4px rgba(128, 128, 128, 0.13);
+    box-shadow: 0 0 4px rgba(128, 128, 128, 0.13);
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
     border-radius: 4px;
@@ -95,7 +94,7 @@
   }
   .offers .offer:hover {
     -webkit-filter: brightness(0.9);
-            filter: brightness(0.9);
+    filter: brightness(0.9);
   }
   .offers .offer:first-child {
     margin-top: 5px;

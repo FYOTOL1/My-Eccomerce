@@ -1,27 +1,23 @@
-import Offers from "./components/home/Offers";
-import ServicesParent from "./components/home/Services/ServicesParent";
-import BigScreen from "./components/home/bigScreen";
-import Deals from "./components/home/Deals";
-import OtherOffers from "./components/home/OtherOffers";
-import Layout from "./components/Layout";
 import { Provider } from "react-redux";
 import store from "./Redux/store";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/auth/LoginPage";
+import SignupPage from "./pages/auth/SignupPage";
 
 function App() {
   return (
-    <Provider store={store}>
-      <>
-        <Layout active={true}>
-          <div className="home">
-            <BigScreen />
-            <Offers />
-            <ServicesParent />
-            <Deals />
-            <OtherOffers />
-          </div>
-        </Layout>
-      </>
-    </Provider>
+    <>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<HomePage />} />
+            <Route path="/auth/login" element={<LoginPage />} />
+            <Route path="/auth/signup" element={<SignupPage />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    </>
   );
 }
 

@@ -6,7 +6,7 @@ export const GetPopularServices = createAsyncThunk(
   async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const response = await axios.get("/services/popular");
+      const response = await axios.get("/services/featured");
       return response.data;
     } catch (error) {
       return rejectWithValue(error);

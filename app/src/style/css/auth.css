@@ -1,0 +1,234 @@
+.auth {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.auth .form {
+  background-color: #fff;
+  max-height: 500px;
+  height: 500px;
+  max-width: 400px;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30px;
+  border-radius: 4px;
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.072);
+          box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.072);
+}
+.auth .form .logo {
+  text-shadow: 10px 5px 2px darkgray;
+}
+.auth .form .inp {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.auth .form .inp label {
+  position: absolute;
+  top: -25px;
+  color: #333;
+  text-transform: capitalize;
+}
+.auth .form .inp input {
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: 1px solid rgba(128, 128, 128, 0.398);
+  -webkit-box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.075);
+          box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.075);
+}
+.auth .form .inp input::-webkit-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .form .inp input::-moz-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .form .inp input:-ms-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .form .inp input::-ms-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .form .inp input::placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .form .inp input:focus {
+  outline: 3px solid rgba(0, 255, 247, 0.571);
+}
+.auth .form .link {
+  color: #333;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+.auth .form .link:hover {
+  opacity: 0.8;
+}
+.auth .form .link::after {
+  content: "";
+  position: absolute;
+  right: -85%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 80%;
+  height: 3px;
+  background: rgba(51, 51, 51, 0.7098039216);
+}
+.auth .form .link::before {
+  content: "";
+  position: absolute;
+  left: -85%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 80%;
+  height: 3px;
+  background: rgba(51, 51, 51, 0.7098039216);
+}
+.auth .form button {
+  padding: 5px 0;
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  background: #16ff9c;
+  color: rgba(51, 51, 51, 0.8901960784);
+  -webkit-box-shadow: 0 0 3px whitesmoke;
+          box-shadow: 0 0 3px whitesmoke;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.auth .form button:hover {
+  opacity: 0.7;
+}
+.auth .login {
+  background-color: #fff;
+  max-height: 500px;
+  height: 500px;
+  max-width: 400px;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30px;
+  border-radius: 4px;
+  gap: 40px;
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.072);
+          box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.072);
+}
+.auth .login .logo {
+  text-shadow: 10px 5px 2px darkgray;
+}
+.auth .login .inp {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.auth .login .inp label {
+  position: absolute;
+  top: -25px;
+  color: #333;
+  text-transform: capitalize;
+}
+.auth .login .inp input {
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: 1px solid rgba(128, 128, 128, 0.398);
+  -webkit-box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.075);
+          box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.075);
+}
+.auth .login .inp input::-webkit-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .login .inp input::-moz-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .login .inp input:-ms-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .login .inp input::-ms-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .login .inp input::placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.auth .login .inp input:focus {
+  outline: 3px solid rgba(0, 255, 247, 0.571);
+}
+.auth .login button {
+  padding: 5px 0;
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  background: #16ff9c;
+  color: rgba(51, 51, 51, 0.8901960784);
+  -webkit-box-shadow: 0 0 3px whitesmoke;
+          box-shadow: 0 0 3px whitesmoke;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.auth .login button:hover {
+  opacity: 0.7;
+}

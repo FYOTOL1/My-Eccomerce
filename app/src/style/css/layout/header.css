@@ -4,11 +4,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px 50px;
   height: 60px;
   max-width: 1400px;
@@ -36,14 +36,14 @@
   background: white;
   color: #333;
   -webkit-filter: drop-shadow(0 2px 3px rgba(128, 128, 128, 0.163));
-  filter: drop-shadow(0 2px 3px rgba(128, 128, 128, 0.163));
+          filter: drop-shadow(0 2px 3px rgba(128, 128, 128, 0.163));
 }
 .header .search label {
   position: absolute;
   right: 15px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .header .search label i {
   opacity: 0.6;
@@ -81,15 +81,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   width: 230px;
   letter-spacing: 0.5px;
   color: rgba(0, 0, 0, 0.746);
@@ -100,15 +100,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   width: 100%;
   letter-spacing: 0.5px;
   color: rgba(0, 0, 0, 0.746);
@@ -129,13 +129,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.header .options .status button {
+.header .options .status .Link {
+  font-weight: normal;
   border: none;
   cursor: pointer;
   background: transparent;
@@ -143,7 +144,7 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.header .options .status button:hover {
+.header .options .status .Link:hover {
   opacity: 0.7;
 }
 .header .options .status p {
@@ -153,7 +154,8 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.header .options .download button {
+.header .options .download .Link {
+  font-weight: normal;
   font-size: 15px;
   border: none;
   cursor: pointer;
@@ -172,7 +174,7 @@
   height: 200px;
   background: white;
   -webkit-filter: drop-shadow(0px 2px 2px rgba(128, 128, 128, 0.563));
-  filter: drop-shadow(0px 2px 2px rgba(128, 128, 128, 0.563));
+          filter: drop-shadow(0px 2px 2px rgba(128, 128, 128, 0.563));
   border-radius: 2px 0 2px 2px;
   padding: 0 7px;
 }
@@ -189,16 +191,16 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: auto;
   background: rgba(246, 246, 246, 0.3411764706);
   border-radius: 4px;
   -webkit-box-shadow: 0px 1px 3px rgba(128, 128, 128, 0.2901960784);
-  box-shadow: 0px 1px 3px rgba(128, 128, 128, 0.2901960784);
+          box-shadow: 0px 1px 3px rgba(128, 128, 128, 0.2901960784);
   margin: 10px 0;
 }
 .header .drop_list ul li button {
