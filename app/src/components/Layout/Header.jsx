@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 export default function Header() {
   const [dropList, setDropList] = useState(false);
   const [Authed, setAuthed] = useState(false);
+  const cookie = new Cookies();
   useEffect(() => {
     const cookie = new Cookies();
     const checkAuthed = cookie.get("authorization");
@@ -17,7 +18,6 @@ export default function Header() {
   }, []);
 
   const handleLogout = () => {
-    const cookie = new Cookies();
     cookie.remove("authorization");
     setAuthed(false);
   };
@@ -39,13 +39,9 @@ export default function Header() {
           <div className="row">
             <div className="status">
               {Authed ? (
-                <Link
-                  onClick={() => handleLogout()}
-                  className="Link"
-                  to={"/auth/login"}
-                >
+                <button onClick={() => handleLogout()} className="Link">
                   logout
-                </Link>
+                </button>
               ) : (
                 <>
                   <Link className="Link" to={"/auth/login"}>
