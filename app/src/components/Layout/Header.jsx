@@ -19,7 +19,13 @@ export default function Header() {
 
   const handleLogout = () => {
     cookie.remove("authorization");
-    setAuthed(false);
+    const check = cookie.get("authorization");
+    if (check) {
+      cookie.remove("authorization");
+      setAuthed(false);
+    } else {
+      setAuthed(false);
+    }
   };
   return (
     <>
