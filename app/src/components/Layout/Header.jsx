@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../style/css/layout/header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 
 export default function Header() {
   const [dropList, setDropList] = useState(false);
   const [Authed, setAuthed] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     const cookie = new Cookies();
     const checkAuthed = cookie.get("authorization");
@@ -20,6 +21,7 @@ export default function Header() {
     const cookie = new Cookies();
     cookie.remove("authorization");
     setAuthed(false);
+    navigate("/auth/login");
   };
   return (
     <>
@@ -39,13 +41,13 @@ export default function Header() {
           <div className="row">
             <div className="status">
               {Authed ? (
-                <button
-                  onClick={(e) => handleLogout()}
+                <Link
+                  onClick={() => handleLogout()}
                   className="Link"
-                  to={"/auth/logout"}
+                  to={"/auth/login"}
                 >
                   logout
-                </button>
+                </Link>
               ) : (
                 <>
                   <Link className="Link" to={"/auth/login"}>

@@ -17,6 +17,23 @@ export const LoginUser = createAsyncThunk(
     }
   }
 );
+export const SignupUser = createAsyncThunk(
+  "Auth/SignupUser",
+  async (data, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+      const response = await axios.post("/auth/signup", {
+        username: data?.username,
+        email: data?.email,
+        password: data?.password,
+        phone_number: data?.phone_number,
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data);
+    }
+  }
+);
 
 const AuthSlice = createSlice({
   name: "Auth",
@@ -26,6 +43,7 @@ const AuthSlice = createSlice({
     error: "",
   },
   extraReducers: (builder) => {
+    // login
     builder.addCase(LoginUser.pending, (state) => {
       state.loading = true;
       state.error = "";
@@ -45,6 +63,28 @@ const AuthSlice = createSlice({
     });
     builder.addCase(LoginUser.rejected, (state, { payload }) => {
       state.token = "";
+      state.error = payload?.msg;
+    });
+    // signup
+    builder.addCase(SignupUser.pending, (state) => {
+      state.loading = true;
+      state.error = "";
+    });
+    builder.addCase(SignupUser.fulfilled, (state, { payload }) => {
+      console.log(payload);
+      if (payload?.token?.length) {
+        const cookie = new Cookies();
+        cookie.set("authorization", payload.token, {
+          secure: true,
+          path: "/",
+          maxAge: 60 * 60 * 24 * 7,
+        });
+        state.nav = true;
+      }
+      state.loading = false;
+    });
+    builder.addCase(SignupUser.rejected, (state, { payload }) => {
+      state.loading = false;
       state.error = payload?.msg;
     });
   },

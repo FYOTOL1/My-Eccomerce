@@ -22,7 +22,7 @@ loginApi.post("/auth/login", async (req, res) => {
       );
       return res.status(200).json({ FindUser, token });
     } else {
-      return res.status(200).json({ msg: "Incorrect Email OR Password" });
+      return res.status(401).json({ msg: "Incorrect Email OR Password" });
     }
   } catch (error) {
     return res.status(400).json({ msg: error.message });

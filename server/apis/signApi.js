@@ -3,7 +3,7 @@ const connectDb = require("../db/connectDb");
 const user = require("../db/models/auth/user");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET_KEY = "ahmedahmedahmed1231231234asdasdasd";
-const JWT_EXPIRE_TIME = "90d";
+const JWT_EXPIRE_TIME = "7d";
 const signupApi = express.Router();
 
 signupApi.post("/auth/signup", async (req, res) => {
@@ -18,13 +18,16 @@ signupApi.post("/auth/signup", async (req, res) => {
         phone_number,
         password,
       });
-      const token = jwt.sign({ userId: CreateUser._id }, JWT_SECRET_KEY, {
-        expiresIn: JWT_EXPIRE_TIME,
-      });
-      return res.status(201).json({ CreateUser, token: token });
-    } else {
-      return res.status(400).json({ msg: "User Already Exist" });
+      const token = jwt.sign(
+        { userId: CreateUser._id, role: CreateUser.role },
+        JWT_SECRET_KEY,
+        {
+          expiresIn: JWT_EXPIRE_TIME,
+        }
+      );
+      return res.status(201).json({ userData: CreateUser, token });
     }
+    return res.status(400).json({ msg: "User Already Exist" });
   } catch (error) {
     console.log(error);
     return res.status(400).json({ msg: error.message || "Field Request" });

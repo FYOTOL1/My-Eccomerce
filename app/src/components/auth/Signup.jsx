@@ -1,14 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../style/css/auth.css";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { SignupUser } from "../../Redux/slices/authSlice";
 
 export default function Signup() {
+  const Store = useSelector((state) => state.auth);
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [phone_number, setphone_number] = useState("");
   const [password, setpassword] = useState("");
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
 
-  const handleSubmit = (e) => {};
+  useEffect(() => {
+    if (Store.nav) {
+      navigation("/");
+    }
+  }, [Store.nav, navigation]);
+
+  const handleSignup = (e) => {
+    if (
+      username?.length &&
+      email?.length &&
+      password?.length &&
+      phone_number?.length
+    ) {
+      dispatch(SignupUser({ username, email, password, phone_number }));
+      console.log("Login Successfully");
+      return;
+    }
+    console.log("Missing Something");
+  };
   return (
     <>
       <div className="auth">
@@ -67,7 +90,7 @@ export default function Signup() {
           <Link className="link" to={"/auth/login"}>
             Have An Account
           </Link>
-          <button onClick={(e) => handleSubmit()}>Sign Up</button>
+          <button onClick={(e) => handleSignup()}>Sign Up</button>
         </div>
       </div>
     </>

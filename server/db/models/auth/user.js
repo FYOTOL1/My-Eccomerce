@@ -5,7 +5,6 @@ const user = mongoose.Schema(
     username: {
       type: String,
       required: [true, "username Required"],
-      lowercase: true,
     },
     email: {
       type: String,
@@ -15,7 +14,6 @@ const user = mongoose.Schema(
     password: {
       type: String,
       required: [true, "password Required"],
-      lowercase: true,
     },
     passwordChangedAt: {
       type: Date,
