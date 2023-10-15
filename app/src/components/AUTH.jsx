@@ -29,7 +29,7 @@ export default function AUTH({ children, type }) {
         }
         break;
     }
-  }, [navigation, type]);
+  }, [navigation, type, Store.loading]);
 
   return <>{!Protected ? (Store.loading ? "loading" : children) : null}</>;
 }

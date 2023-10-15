@@ -72,8 +72,8 @@ const AuthSlice = createSlice({
     });
     builder.addCase(SignupUser.fulfilled, (state, { payload }) => {
       console.log(payload);
+      const cookie = new Cookies();
       if (payload?.token?.length) {
-        const cookie = new Cookies();
         cookie.set("authorization", payload.token, {
           secure: true,
           path: "/",
@@ -81,7 +81,12 @@ const AuthSlice = createSlice({
         });
         state.nav = true;
       }
-      state.loading = false;
+      const checkAuthed = cookie.get("authorized");
+      if (checkAuthed?.length) {
+        state.loading = true;
+      } else {
+        state.loading = true;
+      }
     });
     builder.addCase(SignupUser.rejected, (state, { payload }) => {
       state.loading = false;

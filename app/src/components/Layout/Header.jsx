@@ -17,16 +17,16 @@ export default function Header() {
     }
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     cookie.remove("authorization");
     const check = cookie.get("authorization");
-    if (check) {
-      cookie.remove("authorization");
-      setAuthed(false);
-    } else {
+    cookie.remove("authorization");
+    window.location.reload();
+    if (!check) {
       setAuthed(false);
     }
   };
+
   return (
     <>
       <div className="header">
