@@ -11,6 +11,21 @@
       -ms-flex-align: center;
           align-items: center;
 }
+.auth .message {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  background: #ff8888;
+  color: whitesmoke;
+  text-shadow: 0 0 1px whitesmoke;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  font-size: 18px;
+}
 .auth .form {
   background-color: #fff;
   max-height: 500px;
@@ -136,6 +151,9 @@
 }
 .auth .form button:hover {
   opacity: 0.7;
+}
+.auth .signup .inp input {
+  outline: 1px solid rgba(128, 128, 128, 0.39) !important;
 }
 .auth .login {
   background-color: #fff;

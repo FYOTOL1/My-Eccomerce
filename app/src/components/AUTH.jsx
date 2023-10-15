@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+import LOADING from "./LOADING";
 
 export default function AUTH({ children, type }) {
   const Store = useSelector((state) => state.auth);
@@ -31,5 +32,5 @@ export default function AUTH({ children, type }) {
     }
   }, [navigation, type, Store.loading]);
 
-  return <>{!Protected ? (Store.loading ? "loading" : children) : null}</>;
+  return <>{!Protected ? <LOADING> {children} </LOADING> : null}</>;
 }

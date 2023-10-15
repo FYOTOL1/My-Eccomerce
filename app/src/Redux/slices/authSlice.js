@@ -40,7 +40,8 @@ const AuthSlice = createSlice({
   initialState: {
     nav: false,
     loading: false,
-    error: "",
+    login_error: "",
+    signup_error: "",
   },
   extraReducers: (builder) => {
     // login
@@ -49,6 +50,7 @@ const AuthSlice = createSlice({
       state.error = "";
     });
     builder.addCase(LoginUser.fulfilled, (state, { payload }) => {
+      console.log(payload);
       if (payload?.token?.length) {
         console.log(payload);
         const cookie = new Cookies();
@@ -63,7 +65,8 @@ const AuthSlice = createSlice({
     });
     builder.addCase(LoginUser.rejected, (state, { payload }) => {
       state.token = "";
-      state.error = payload?.msg;
+      state.loading = false;
+      state.login_error = payload?.msg;
     });
     // signup
     builder.addCase(SignupUser.pending, (state) => {
@@ -71,7 +74,6 @@ const AuthSlice = createSlice({
       state.error = "";
     });
     builder.addCase(SignupUser.fulfilled, (state, { payload }) => {
-      console.log(payload);
       const cookie = new Cookies();
       if (payload?.token?.length) {
         cookie.set("authorization", payload.token, {
@@ -81,16 +83,16 @@ const AuthSlice = createSlice({
         });
         state.nav = true;
       }
-      const checkAuthed = cookie.get("authorized");
+      const checkAuthed = cookie.get("authorization");
       if (checkAuthed?.length) {
-        state.loading = true;
+        state.loading = false;
       } else {
         state.loading = true;
       }
     });
     builder.addCase(SignupUser.rejected, (state, { payload }) => {
       state.loading = false;
-      state.error = payload?.msg;
+      state.signup_error = payload?.msg;
     });
   },
 });

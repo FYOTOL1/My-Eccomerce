@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../style/css/layout/header.css";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 export default function Header() {
   const [dropList, setDropList] = useState(false);
   const [Authed, setAuthed] = useState(false);
+  const logoutRef = useRef();
   const cookie = new Cookies();
   useEffect(() => {
     const cookie = new Cookies();
@@ -21,9 +22,14 @@ export default function Header() {
     cookie.remove("authorization");
     const check = cookie.get("authorization");
     cookie.remove("authorization");
+    logoutRef.current.disabled = true;
     window.location.reload();
     if (!check) {
-      setAuthed(false);
+      window.location.reload();
+      if (window.location.pathname === "/auth/login") {
+        window.location.reload();
+        setAuthed(false);
+      }
     }
   };
 
@@ -45,7 +51,11 @@ export default function Header() {
           <div className="row">
             <div className="status">
               {Authed ? (
-                <button onClick={() => handleLogout()} className="Link">
+                <button
+                  ref={logoutRef}
+                  onClick={() => handleLogout()}
+                  className="Link"
+                >
                   logout
                 </button>
               ) : (
