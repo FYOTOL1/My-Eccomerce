@@ -32,11 +32,11 @@ export default function Deals() {
               </div>
               <div className="info">
                 <div className="rate">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star-half-stroke"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star-half-stroke"></i>
                 </div>
                 <p className="price">
                   <span>$</span>
@@ -58,11 +58,11 @@ export default function Deals() {
               </div>
               <div className="info">
                 <div className="rate">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star-half-stroke"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star-half-stroke"></i>
                 </div>
                 <p className="price">
                   <span>$</span>
@@ -84,11 +84,11 @@ export default function Deals() {
               </div>
               <div className="info">
                 <div className="rate">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star-half-stroke"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star-half-stroke"></i>
                 </div>
                 <p className="price">
                   <span>$</span>
@@ -110,11 +110,11 @@ export default function Deals() {
               </div>
               <div className="info">
                 <div className="rate">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star-half-stroke"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star"></i>
+                  <i className="fa-solid fa-star star-half-stroke"></i>
                 </div>
                 <p className="price">
                   <span>$</span>

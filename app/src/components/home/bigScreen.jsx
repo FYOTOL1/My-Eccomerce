@@ -17,11 +17,11 @@ export default function bigScreen() {
               <i className="fa-regular fa-face-laugh-beam"></i>
             </div>
             <div className="rate">
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-regular fa-star-half-stroke"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-regular fa-star star-half-stroke"></i>
             </div>
           </div>
           <div className="card card2">
@@ -34,11 +34,11 @@ export default function bigScreen() {
               <i className="fa-solid fa-shield-halved"></i>
             </div>
             <div className="rate">
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-regular fa-star emp"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-regular fa-star star emp"></i>
             </div>
           </div>
           <div className="card card3">
@@ -51,11 +51,11 @@ export default function bigScreen() {
               <i className="fa-regular fa-face-grin-hearts"></i>
             </div>
             <div className="rate">
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
+              <i className="fa-solid fa-star star"></i>
             </div>
           </div>
         </div>

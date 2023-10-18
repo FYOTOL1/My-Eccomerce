@@ -23,14 +23,11 @@ export default function Header() {
     const check = cookie.get("authorization");
     cookie.remove("authorization");
     logoutRef.current.disabled = true;
-    window.location.reload();
-    if (!check) {
+    if (!check && window.location.pathname === "/auth/login") {
       window.location.reload();
-      if (window.location.pathname === "/auth/login") {
-        window.location.reload();
-        setAuthed(false);
-      }
+      setAuthed(false);
     }
+    window.location.reload();
   };
 
   return (
@@ -92,13 +89,25 @@ export default function Header() {
           <div className="drop_list">
             <ul>
               <li>
-                <Link className="link" to="auth/login">
-                  login
-                </Link>
-                <p>/</p>
-                <Link className="link" to="auth/signup">
-                  sign up
-                </Link>
+                {Authed ? (
+                  <button
+                    ref={logoutRef}
+                    onClick={() => handleLogout()}
+                    className="Link"
+                  >
+                    logout
+                  </button>
+                ) : (
+                  <>
+                    <Link className="link" to="auth/login">
+                      login
+                    </Link>
+                    <p>/</p>
+                    <Link className="link" to="auth/signup">
+                      sign up
+                    </Link>
+                  </>
+                )}
               </li>
               <li>
                 <Link className="Link">download</Link>

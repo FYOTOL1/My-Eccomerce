@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../style/css/auth.css";
 import { useDispatch, useSelector } from "react-redux";
 import { LoginUser } from "../../Redux/slices/authSlice";
@@ -11,8 +11,10 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [msg, setmsg] = useState("");
   const navigation = useNavigate();
+  const inpRef = useRef();
 
   useEffect(() => {
+    inpRef.current.focus();
     if (Store.nav) {
       navigation("/");
     }
@@ -46,6 +48,7 @@ export default function Login() {
                   : null
               }
               placeholder="Email"
+              ref={inpRef}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="text"

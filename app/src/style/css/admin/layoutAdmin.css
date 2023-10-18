@@ -1,0 +1,12 @@
+.layoutAdmin {
+  min-height: 100vh;
+}
+.layoutAdmin .SECTION {
+  background-color: #f4f5f9;
+  -webkit-box-shadow: 2px 6px 5px rgba(220, 220, 220, 0.475);
+          box-shadow: 2px 6px 5px rgba(220, 220, 220, 0.475);
+  min-height: calc(100vh - 60px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

@@ -50,9 +50,7 @@ const AuthSlice = createSlice({
       state.error = "";
     });
     builder.addCase(LoginUser.fulfilled, (state, { payload }) => {
-      console.log(payload);
       if (payload?.token?.length) {
-        console.log(payload);
         const cookie = new Cookies();
         cookie.set("authorization", payload.token, {
           secure: true,

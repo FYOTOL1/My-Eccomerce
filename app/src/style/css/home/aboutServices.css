@@ -104,9 +104,9 @@
 .about_services .featured .cards .card .info .rate {
   color: gold;
 }
-.about_services .popular .cards .card .info .rate .fa-star-half-stroke,
+.about_services .popular .cards .card .info .rate .fa-star star-half-stroke,
 .about_services .popular .cards .card .info .rate .fa-regular,
-.about_services .featured .cards .card .info .rate .fa-star-half-stroke,
+.about_services .featured .cards .card .info .rate .fa-star star-half-stroke,
 .about_services .featured .cards .card .info .rate .fa-regular {
   color: gray;
 }

@@ -14,16 +14,17 @@
 }
 .footer .row a {
   text-decoration: none;
-  color: gray;
+  color: #fff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 .footer .row a:hover {
-  color: #fff;
+  color: gray;
 }
 .footer .row a i {
   font-size: 2em;
   margin: 0% 1%;
+  color: inherit;
 }
 .footer .row ul {
   width: 100%;

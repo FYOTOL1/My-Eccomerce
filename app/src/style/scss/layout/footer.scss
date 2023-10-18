@@ -12,14 +12,15 @@
     font-size: 0.8em;
     a {
       text-decoration: none;
-      color: gray;
+      color: #fff;
       transition: 0.5s;
       &:hover {
-        color: #fff;
+        color: gray;
       }
       i {
         font-size: 2em;
         margin: 0% 1%;
+        color: inherit;
       }
     }
     ul {
