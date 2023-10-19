@@ -15,7 +15,7 @@ export default function Product() {
   useEffect(() => {
     dispatch(GetProduct(params.id));
     if (!product?.data || product?.error) {
-      navigate("/product");
+      navigate("/products");
     }
   }, [dispatch, navigate, params.id, product?.error]);
 
