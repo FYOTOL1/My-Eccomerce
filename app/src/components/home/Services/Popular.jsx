@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../../../style/css/home/aboutServices.css";
+import "../../../style/css/home/servicesParent.css";
 import { useDispatch, useSelector } from "react-redux";
 import { GetPopularServices } from "../../../Redux/slices/popularServicesSlice";
 

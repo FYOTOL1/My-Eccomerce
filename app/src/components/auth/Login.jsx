@@ -23,6 +23,7 @@ export default function Login() {
   const handleSubmit = () => {
     if (email.length && password.length) {
       dispatch(LoginUser({ email, password }));
+      navigation("/");
     } else {
       setmsg("Incorrect Email OR Password");
       console.log("Incorrect Email OR Password");

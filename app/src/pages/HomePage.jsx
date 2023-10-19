@@ -10,7 +10,7 @@ import AUTH from "../components/AUTH";
 export default function Home() {
   return (
     <>
-      <AUTH type={"home"}>
+      <AUTH type={"user"}>
         <Layout active={true}>
           <div className="home">
             <BigScreen />

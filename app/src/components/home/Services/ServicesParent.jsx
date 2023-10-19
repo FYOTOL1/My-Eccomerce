@@ -1,7 +1,7 @@
 import React from "react";
 import Popular from "./Popular";
 import Featured from "./Featured";
-import "../../../style/css/home/aboutServices.css";
+import "../../../style/css/home/servicesParent.css";
 
 export default function PopularProducts() {
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "../../../style/css/home/aboutServices.css";
+import "../../../style/css/home/servicesParent.css";
 import { GetFeaturedServices } from "../../../Redux/slices/featuredServicesSlice";
 
 export default function Featured() {

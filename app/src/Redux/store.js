@@ -3,6 +3,7 @@ import popularServicesSlice from "./slices/popularServicesSlice";
 import featuredServicesSlice from "./slices/featuredServicesSlice";
 import authSlice from "./slices/authSlice";
 import usersSlice from "./slices/admin/usersSlice";
+import productsSlice from "./slices/productsSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     featured: featuredServicesSlice,
     auth: authSlice,
     users: usersSlice,
+    products: productsSlice,
   },
 });
 

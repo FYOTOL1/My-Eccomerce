@@ -21,7 +21,7 @@ export default function AUTH({ children, type }) {
           setProtected(false);
         }
         break;
-      case "home":
+      case "user":
         if (auth?.length) {
           setProtected(false);
         } else {

@@ -64,6 +64,8 @@
           box-shadow: 0 0 3px rgba(128, 128, 128, 0.2156862745);
   border-radius: 4px;
   padding: 10px 20px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 .about_services .popular .cards .card .imgParent,
 .about_services .featured .cards .card .imgParent {
@@ -116,6 +118,12 @@
   font-weight: bold;
   color: #333;
   letter-spacing: 1px;
+}
+.about_services .popular .cards .card:hover,
+.about_services .featured .cards .card:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
 }
 @media (max-width: 1425px) {
   .about_services .popular .cards,
