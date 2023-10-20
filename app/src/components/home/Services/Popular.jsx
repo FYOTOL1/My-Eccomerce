@@ -29,10 +29,7 @@ export default function Popular() {
                   <div className="info">
                     <div className="rate">
                       <i className="fa-solid fa-star star"></i>
-                      <i className="fa-solid fa-star star"></i>
-                      <i className="fa-solid fa-star star"></i>
-                      <i className="fa-solid fa-star star"></i>
-                      <i className="fa-solid fa-star star-half-stroke"></i>
+                      <p>{e?.rate}</p>
                     </div>
                     <p className="price">
                       <span>$</span>

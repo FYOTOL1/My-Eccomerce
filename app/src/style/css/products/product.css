@@ -77,6 +77,12 @@
 .product .product-cont .details .price p {
   color: #c8c752;
 }
+.product .product-cont .details .rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 25px;
+}
 .product .product-cont .details .rate i {
   color: gold;
 }

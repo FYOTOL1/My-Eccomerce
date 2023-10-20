@@ -19,49 +19,6 @@ export default function Product() {
     }
   }, [dispatch, navigate, params.id, product?.error]);
 
-  const RATE =
-    p?.rate === 1 ? (
-      <>
-        <i className="fa-solid fa-star star"></i>
-      </>
-    ) : p?.rate === 2 ? (
-      <>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-      </>
-    ) : p?.rate === 3 ? (
-      <>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-      </>
-    ) : p?.rate === 4 ? (
-      <>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-      </>
-    ) : p?.rate === 4.5 ? (
-      <>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-regular fa-star-half-stroke"></i>
-      </>
-    ) : p?.rate === 5 ? (
-      <>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-        <i className="fa-solid fa-star star"></i>
-      </>
-    ) : (
-      ""
-    );
-
   return (
     <>
       <AUTH type={"user"}>
@@ -81,7 +38,10 @@ export default function Product() {
                   <div className="price">
                     <p>{p.price}$</p>
                   </div>
-                  <div className="rate">{RATE}</div>
+                  <div className="rate">
+                    <i className="fa-solid fa-star star"></i>
+                    <p>{p?.rate}</p>
+                  </div>
                   <div className="add-cart">
                     <button>To Cart</button>
                   </div>
