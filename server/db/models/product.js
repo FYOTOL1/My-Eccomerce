@@ -6,13 +6,18 @@ const product = mongoose.Schema(
       type: String,
       required: [true, "Image Required"],
     },
-    type: {
+    category: {
       type: String,
       required: [true, "Type Required"],
     },
     title: {
       type: String,
       required: [true, "Title Required"],
+    },
+    quantity: {
+      type: Number,
+      required: [true, "quantity"],
+      default: 1,
     },
     info: {
       type: String,
@@ -21,6 +26,10 @@ const product = mongoose.Schema(
     price: {
       type: Number,
       required: [true, " Price Required"],
+    },
+    status: {
+      type: Boolean,
+      default: true,
     },
     rate: {
       type: Number,

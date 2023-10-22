@@ -10,9 +10,7 @@ export default function NavigationList({ pageName }) {
         setShow(true);
       }
     };
-
     handleResize();
-
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -42,45 +40,36 @@ export default function NavigationList({ pageName }) {
         </div>
         <ul>
           <li>
-            <p>Dashboard</p>
+            <p>
+              <a href="dashboard">Dashboard</a>
+            </p>
             <i
               style={pageName === "dashboard" ? { color: " #4169e1d5" } : null}
               className="fa-solid fa-chart-pie"
             ></i>
           </li>
           <li>
-            <p>Analyses</p>
-            <i
-              style={pageName === "analyses" ? { color: " #4169e1d5" } : null}
-              className="fa-solid fa-chart-simple"
-            ></i>
-          </li>
-          <li>
-            <p>Users</p>
+            <p>
+              <a href="users">Users</a>
+            </p>
             <i
               style={pageName === "users" ? { color: " #4169e1d5" } : null}
               className="fa-solid fa-users"
             ></i>
           </li>
           <li>
-            <p>Top Products</p>
-            <i
-              style={
-                pageName === "top_products" ? { color: " #4169e1d5" } : null
-              }
-              className="fa-solid fa-cart-plus"
-            ></i>
-          </li>
-
-          <li>
-            <p>Products</p>
+            <p>
+              <a href="products">Products</a>
+            </p>
             <i
               style={pageName === "products" ? { color: " #4169e1d5" } : null}
               className="fa-solid fa-cart-arrow-down"
             ></i>
           </li>
           <li>
-            <p>Containers</p>
+            <p>
+              <a href="containers">Containers</a>
+            </p>
             <i
               style={pageName === "containers" ? { color: " #4169e1d5" } : null}
               className="fa-solid fa-box-open"

@@ -1,0 +1,241 @@
+import React, { useEffect, useRef, useState } from "react";
+import LayoutAdmin from "../LayoutAdmin";
+import LOADING from "../../LOADING";
+import "../../../style/css/admin/products.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  GetProducts,
+  productsSearch,
+  AddProduct,
+} from "../../../Redux/slices/productsSlice";
+
+export default function Products() {
+  const data = useSelector((state) => state.products.filter);
+  const dispatch = useDispatch();
+  const selectRef = useRef();
+  //
+  const [ShowPopup, setShowPopup] = useState();
+  const [Img, setImg] = useState("../../../../images/dragImg.jpg");
+  const [Title, setTitle] = useState();
+  const [Category, setCategory] = useState();
+  const [Quantity, setQuantity] = useState();
+  const [Price, setPrice] = useState(0);
+  const [Info, setInfo] = useState();
+
+  //
+
+  useEffect(() => {
+    dispatch(GetProducts());
+  }, [dispatch]);
+
+  const FilterProducts = (value) => {
+    dispatch(productsSearch({ value, find_by: selectRef.current.value }));
+  };
+
+  const renderImage = async (e) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.addEventListener("load", () => {
+      setImg(reader.result);
+    });
+  };
+
+  const createProduct = () => {
+    try {
+      dispatch(AddProduct({ Img, Title, Category, Quantity, Price, Info }));
+      setCategory("");
+      setTitle("");
+      setImg("../../../../images/dragImg.jpg");
+      setInfo("");
+      setPrice(0);
+      setQuantity(0);
+      ShowPopup(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  return (
+    <>
+      <LayoutAdmin pageName={"products"}>
+        <LOADING>
+          {ShowPopup === true ? (
+            <div className="popup-cont">
+              <div className="popup">
+                <div className="img">
+                  <label htmlFor="img">
+                    <img src={Img} alt="Error" />
+                  </label>
+                  <input
+                    onChange={(e) => renderImage(e)}
+                    placeholder="img"
+                    type="file"
+                    id="img"
+                    required
+                  />
+                </div>
+                <div className="inp title">
+                  <label htmlFor="title">title</label>
+                  <input
+                    placeholder="title"
+                    maxLength={15}
+                    onChange={(e) => setTitle(e.target.value)}
+                    value={Title}
+                    type="text"
+                    id="title"
+                    required
+                    autoComplete="on"
+                  />
+                </div>
+                <div className="inp price">
+                  <label htmlFor="price">Price</label>
+                  <input
+                    placeholder="price"
+                    maxLength={8}
+                    onChange={(e) => setPrice(e.target.value)}
+                    value={Price}
+                    type="number"
+                    id="price"
+                    required
+                    autoComplete="on"
+                  />
+                </div>
+                <div className="inp quantity">
+                  <label htmlFor="quantity">quantity</label>
+                  <input
+                    placeholder="quantity"
+                    maxLength={4}
+                    onChange={(e) => setQuantity(e.target.value)}
+                    value={Quantity}
+                    type="number"
+                    id="quantity"
+                    required
+                    autoComplete="on"
+                  />
+                </div>
+                <div className="inp info">
+                  <label htmlFor="info">info</label>
+                  <input
+                    placeholder="info"
+                    maxLength={40}
+                    onChange={(e) => setInfo(e.target.value)}
+                    value={Info}
+                    type="text"
+                    id="info"
+                    required
+                    autoComplete="on"
+                  />
+                </div>
+                <div className="inp category">
+                  <label htmlFor="category">category</label>
+                  <select
+                    onChange={(e) => setCategory(e.target.value)}
+                    value={Category}
+                    id="category"
+                    className="select"
+                  >
+                    <option value="car">Car</option>
+                    <option value="fruit">Fruit</option>
+                    <option value="phone">Phone</option>
+                    <option value="web">web</option>
+                  </select>
+                </div>
+                <div className="actions">
+                  <div
+                    className="cancel-btn"
+                    onClick={(e) => setShowPopup(false)}
+                  >
+                    Cancel
+                  </div>
+                  <div className="send-btn" onClick={(e) => createProduct()}>
+                    Submit
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : null}
+          {/*  */}
+          <div className="products">
+            <div className="products-cont">
+              <header>
+                <section className="actions">
+                  <div onClick={(e) => setShowPopup(true)} className="btn add">
+                    <i className="fa-solid fa-plus"></i>
+                    <p>Add</p>
+                  </div>
+                  <div className="btn delete">
+                    <i className="fa-solid fa-trash-can"></i>
+                    <p>Delete</p>
+                  </div>
+                </section>
+                <section className="filter">
+                  <select ref={selectRef}>
+                    <option value="title">Title</option>
+                    <option value="category">Category</option>
+                  </select>
+                  <div className="search">
+                    <input
+                      id="search"
+                      onChange={(e) => FilterProducts(e.target.value)}
+                      type="search"
+                      placeholder="search..."
+                      autoComplete="off"
+                    />
+                    <label htmlFor="search">
+                      <i className="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                  </div>
+                </section>
+              </header>
+              {data?.length ? (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Quantity</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Price</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  {data &&
+                    data?.map((e) => (
+                      <tbody
+                        key={e._id}
+                        style={e.status ? null : { opacity: "0.3" }}
+                      >
+                        <tr>
+                          <td className="img">
+                            <img src={e.img} alt="Error" />
+                          </td>
+                          <td>{e?.title}</td>
+                          <td>{e?.category}</td>
+                          <td>{e?.quantity}</td>
+                          <td>{new Date(e?.createdAt).toLocaleDateString()}</td>
+                          <td>{e?.status ? "Enabled" : "Disabled"}</td>
+                          <td>{e?.price}</td>
+                          <td>
+                            <span className="del">
+                              <i className="fa-solid fa-trash-can"></i>
+                            </span>
+                            <span className="upd">
+                              <i className="fa-solid fa-pen"></i>
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    ))}
+                </table>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+        </LOADING>
+      </LayoutAdmin>
+    </>
+  );
+}

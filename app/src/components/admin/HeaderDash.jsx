@@ -2,11 +2,19 @@ import React from "react";
 import "../../style/css/admin/headerDash.css";
 import { search } from "../../Redux/slices/admin/usersSlice";
 import { useDispatch } from "react-redux";
+import { productsSearch } from "../../Redux/slices/productsSlice";
 
-export default function HeaderDash() {
+export default function HeaderDash({ type }) {
   const dispatch = useDispatch();
-  const filterSearch = (e) => {
-    dispatch(search(e));
+  const filterSearch = async (e) => {
+    switch (type) {
+      case "users":
+        return dispatch(search(e));
+      case "products":
+        return dispatch(productsSearch(e));
+      default:
+        break;
+    }
   };
 
   return (

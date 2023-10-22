@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import LayoutAdmin from "./LayoutAdmin";
+import LayoutAdmin from "../LayoutAdmin";
 import { useDispatch, useSelector } from "react-redux";
-import "../../style/css/admin/usersDash.css";
+import "../../../style/css/admin/usersDash.css";
 import {
   DeleteUser,
   GetUsers,
   UpdateUser,
-} from "../../Redux/slices/admin/usersSlice";
-import LOADING from "../LOADING";
+} from "../../../Redux/slices/admin/usersSlice";
+import LOADING from "../../LOADING";
 
 export default function Users() {
   const filter = useSelector((state) => state.users.filter);

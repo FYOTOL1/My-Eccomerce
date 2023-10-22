@@ -6,18 +6,17 @@ const productApi = express.Router();
 productApi.post("/products", async (req, res) => {
   try {
     await connectDb();
-    const { img, title, info, price, rate, type } = await req.body;
+    const { img, title, info, price, category } = await req.body;
     const CreateProduct = await product.create({
       img,
       title,
-      type,
+      category,
       info,
       price,
-      rate,
     });
     return res.status(201).json(CreateProduct);
   } catch (error) {
-    return res.status(400).json({ msg: error.message || "Field Request" });
+    return res.status(400).json({ msg: error.message || error });
   }
 });
 
@@ -59,6 +58,20 @@ productApi.patch("/products/:id", async (req, res) => {
       new: true,
     });
     return res.status(200).json(GetProduct);
+  } catch (error) {
+    return res.status(400).json({ msg: error.message || "Field Request" });
+  }
+});
+
+productApi.delete("/products/all", async (req, res) => {
+  try {
+    await connectDb();
+    const { key } = req.headers;
+    if (key === "123") {
+      const DeleteProduct = await product.deleteMany();
+      return res.status(200).json(DeleteProduct);
+    }
+    return res.status(401).json("Can't Access This Page");
   } catch (error) {
     return res.status(400).json({ msg: error.message || "Field Request" });
   }

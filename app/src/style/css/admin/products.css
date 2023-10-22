@@ -1,0 +1,415 @@
+.products {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.products .products-cont {
+  width: 100%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.products .products-cont::-webkit-scrollbar {
+  display: none;
+}
+.products .products-cont header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  height: 60px;
+  width: 100%;
+  padding: 15px 20px 10px 20px;
+}
+.products .products-cont header section {
+  min-width: 200px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.products .products-cont header section.actions {
+  padding: 2.5px 0;
+  height: 100%;
+}
+.products .products-cont header section.actions .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 100%;
+  background-color: rgba(0, 128, 34, 0.026);
+  outline: 2px solid rgba(0, 128, 45, 0.87);
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.products .products-cont header section.actions .btn p,
+.products .products-cont header section.actions .btn i {
+  color: rgba(0, 184, 110, 0.845);
+}
+.products .products-cont header section.actions .btn:hover {
+  opacity: 0.5;
+}
+.products .products-cont header section.actions .btn.delete {
+  width: 90px;
+  background-color: rgba(128, 9, 0, 0.031);
+  outline: 2px solid rgba(192, 0, 0, 0.867);
+}
+.products .products-cont header section.actions .btn.delete p,
+.products .products-cont header section.actions .btn.delete i {
+  color: rgba(218, 0, 0, 0.845);
+}
+.products .products-cont header section.filter {
+  padding: 2.5px 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.products .products-cont header section.filter select {
+  padding: 0 5px;
+  height: 100%;
+  background-color: ghostwhite;
+  outline: 1px solid rgba(0, 0, 0, 0.163);
+  border-radius: 4px;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.products .products-cont header section.filter select:hover {
+  opacity: 0.8;
+}
+.products .products-cont header section.filter .search {
+  height: 100%;
+  background-color: #eee;
+  outline: 1px solid gray;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.products .products-cont header section.filter .search input {
+  height: 100%;
+  width: 180px;
+  outline: none;
+  border: none;
+  padding: 0 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.products .products-cont header section.filter .search label {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 0.3;
+}
+.products .products-cont header section.filter .search input:focus + label {
+  opacity: 0;
+}
+.products .products-cont table {
+  width: 100%;
+}
+.products .products-cont table thead th {
+  text-align: start;
+  padding: 9px 0 9px 5px;
+  outline: 1px solid white;
+  background-color: #eee;
+}
+.products .products-cont table tbody {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  outline: 1px solid ghostwhite;
+}
+.products .products-cont table tbody td {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-transform: capitalize;
+}
+.products .products-cont table tbody td:first-child {
+  text-align: center;
+}
+.products .products-cont table tbody td:not(:first-child) {
+  padding: 9px 0 9px 5px;
+}
+.products .products-cont table tbody td:last-child {
+  text-align: center;
+}
+.products .products-cont table tbody td .del {
+  width: 25px;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.products .products-cont table tbody td .del i {
+  color: #ff5d5d;
+}
+.products .products-cont table tbody td .del i {
+  color: #ff8181;
+}
+.products .products-cont table tbody td .upd {
+  width: 25px;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.products .products-cont table tbody td .upd i {
+  color: #4680ff;
+}
+.products .products-cont table tbody td .upd i {
+  color: #5d90ff;
+}
+.products .products-cont table tbody td i {
+  margin: 0px 10px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.products .products-cont table tbody td i:hover::after {
+  content: "";
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: rgba(128, 128, 128, 0.1019607843);
+}
+.products .products-cont table tbody td.img {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 90%;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+.products .products-cont table tbody td.img img {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.products .products-cont table tbody td.img input {
+  background-color: red;
+  width: 15px;
+}
+
+.popup-cont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1882352941);
+  z-index: 1;
+}
+.popup-cont .popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+  width: 550px;
+  height: 650px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 4px rgba(148, 144, 144, 0.478);
+          box-shadow: 0 0 4px rgba(148, 144, 144, 0.478);
+  border-radius: 4px;
+  padding: 20px 30px;
+}
+.popup-cont .popup .img {
+  height: 100px;
+  width: 100px;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: 1px solid gray;
+}
+.popup-cont .popup .img label {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.popup-cont .popup .img label img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.popup-cont .popup .img label img:hover {
+  opacity: 0.4;
+}
+.popup-cont .popup .img input {
+  display: none;
+}
+.popup-cont .popup .inp {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.popup-cont .popup .inp.img {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.popup-cont .popup .inp label {
+  position: absolute;
+  top: -25px;
+  color: #333;
+  text-transform: capitalize;
+}
+.popup-cont .popup .inp input {
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: 1px solid rgba(128, 128, 128, 0.398);
+  -webkit-box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.075);
+          box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.075);
+}
+.popup-cont .popup .inp input::-webkit-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.popup-cont .popup .inp input::-moz-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.popup-cont .popup .inp input:-ms-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.popup-cont .popup .inp input::-ms-input-placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.popup-cont .popup .inp input::placeholder {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.popup-cont .popup .inp input:focus {
+  outline: 3px solid rgba(0, 255, 247, 0.571);
+}
+.popup-cont .popup .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.popup-cont .popup .actions .cancel-btn,
+.popup-cont .popup .actions .send-btn {
+  background-color: #ff4545;
+  padding: 5px 20px;
+  border-radius: 2px;
+  color: whitesmoke;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.popup-cont .popup .actions .cancel-btn:hover,
+.popup-cont .popup .actions .send-btn:hover {
+  background-color: rgba(255, 69, 69, 0.7215686275);
+}
+.popup-cont .popup .actions .send-btn {
+  background-color: #298bff;
+}
+.popup-cont .popup .actions .send-btn:hover {
+  background-color: rgba(41, 137, 255, 0.7843137255);
+}
+.popup-cont .popup .select {
+  background: ghostwhite;
+  outline: 1px solid rgba(128, 128, 128, 0.4588235294);
+  border: none;
+  padding: 5px;
+  font-size: 17px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.popup-cont .popup .select:hover {
+  outline: 1px solid #333;
+}
+.popup-cont .popup .select option {
+  background: whitesmoke;
+}

@@ -8,7 +8,7 @@ export default function LayoutAdmin({ children, pageName }) {
     <>
       <div className="layoutAdmin">
         <div className="HEAD">
-          <HeaderDash />
+          <HeaderDash type={pageName} />
         </div>
         <div className="SECTION">
           <NavigationList pageName={pageName} />
