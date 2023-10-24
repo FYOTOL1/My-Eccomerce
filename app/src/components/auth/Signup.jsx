@@ -31,7 +31,6 @@ export default function Signup() {
       phone_number.length <= 14
     ) {
       dispatch(SignupUser({ username, email, password, phone_number }));
-      console.log(Store.signup_error);
     } else {
       let errorMessage = "";
       if (username.length < 3) {

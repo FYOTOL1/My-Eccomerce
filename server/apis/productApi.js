@@ -1,14 +1,16 @@
 const express = require("express");
 const connectDb = require("../db/connectDb");
 const product = require("../db/models/product");
+const uploadImage = require("../utils/uploadImage");
 const productApi = express.Router();
 
 productApi.post("/products", async (req, res) => {
   try {
     await connectDb();
     const { img, title, info, price, category } = await req.body;
+    const cloudinary_image_url = await uploadImage(img);
     const CreateProduct = await product.create({
-      img,
+      img: cloudinary_image_url,
       title,
       category,
       info,
@@ -45,18 +47,13 @@ productApi.patch("/products/:id", async (req, res) => {
   try {
     await connectDb();
     const { id } = await req.params;
-    const { img, title, info, price, rate, type } = await req.body;
-    const update = {
-      ...(img && { img: img }),
-      ...(title && { title: title }),
-      ...(info && { info: info }),
-      ...(price && { price: price }),
-      ...(rate && { rate: rate }),
-      ...(type && { type: type }),
-    };
-    const GetProduct = await product.updateOne({ _id: id }, update, {
-      new: true,
-    });
+    const GetProduct = await product.findByIdAndUpdate(
+      { _id: id },
+      await req?.body,
+      {
+        new: true,
+      }
+    );
     return res.status(200).json(GetProduct);
   } catch (error) {
     return res.status(400).json({ msg: error.message || "Field Request" });
@@ -66,12 +63,8 @@ productApi.patch("/products/:id", async (req, res) => {
 productApi.delete("/products/all", async (req, res) => {
   try {
     await connectDb();
-    const { key } = req.headers;
-    if (key === "123") {
-      const DeleteProduct = await product.deleteMany();
-      return res.status(200).json(DeleteProduct);
-    }
-    return res.status(401).json("Can't Access This Page");
+    const DeleteProducts = await product.deleteMany();
+    return res.status(200).json(DeleteProducts);
   } catch (error) {
     return res.status(400).json({ msg: error.message || "Field Request" });
   }

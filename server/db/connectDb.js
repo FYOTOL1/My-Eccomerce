@@ -8,7 +8,6 @@ async function connectDb() {
     );
     return connect;
   } catch (error) {
-    console.log("Field Connect");
     return;
   }
 }

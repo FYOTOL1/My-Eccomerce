@@ -20,8 +20,8 @@ function App() {
             <Route path="/auth/signup" element={<SignupPage />} />
             <Route path="/admin/users" element={<UsersPage />} />
             <Route path="/admin/products" element={<ProductsPage />} />
-            <Route path="/products/:id" element={<Product />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<Product />} />
           </Routes>
         </BrowserRouter>
       </Provider>

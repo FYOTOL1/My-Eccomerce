@@ -26,7 +26,6 @@ export default function Login() {
       navigation("/");
     } else {
       setmsg("Incorrect Email OR Password");
-      console.log("Incorrect Email OR Password");
     }
   };
 

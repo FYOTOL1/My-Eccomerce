@@ -66,7 +66,6 @@ export default function Users() {
       setRole(UserData.role);
       setShowPopup(false);
     } else {
-      console.log("No Data Selected");
     }
   };
 

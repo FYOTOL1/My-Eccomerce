@@ -88,7 +88,6 @@ const usersSlice = createSlice({
     });
     builder.addCase(DeleteUser.fulfilled, (state, { payload }) => {
       state.loading = false;
-      console.log(payload);
     });
     builder.addCase(DeleteUser.rejected, (state, { payload }) => {
       state.loading = false;

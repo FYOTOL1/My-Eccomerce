@@ -29,7 +29,6 @@ signupApi.post("/auth/signup", async (req, res) => {
     }
     return res.status(400).json({ msg: "User Already Exist" });
   } catch (error) {
-    console.log(error);
     return res.status(400).json({ msg: error.message || "Field Request" });
   }
 });

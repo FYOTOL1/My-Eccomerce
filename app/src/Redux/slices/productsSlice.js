@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import Cookies from "universal-cookie";
 
 export const GetProducts = createAsyncThunk(
   "Products/GetProducts",
@@ -41,6 +42,65 @@ export const AddProduct = createAsyncThunk(
         quantity: data.Quantity,
       });
       return AddProduct.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    } finally {
+      dispatch(GetProducts());
+    }
+  }
+);
+
+export const DeleteAll = createAsyncThunk(
+  "Products/DeleteAll",
+  async (_, thunkAPI) => {
+    const { rejectWithValue, dispatch } = thunkAPI;
+    try {
+      const getAuth = new Cookies();
+      const check = getAuth.get("authorization");
+      const DelAll = await axios.delete("/products/all", {
+        headers: {
+          key: check,
+        },
+      });
+      return DelAll.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    } finally {
+      dispatch(GetProducts());
+    }
+  }
+);
+
+export const DeleteProduct = createAsyncThunk(
+  "Products/DeleteProduct",
+  async (id, thunkAPI) => {
+    const { rejectWithValue, dispatch } = thunkAPI;
+    try {
+      const DelProduct = await axios.delete(`/products/${id}`);
+      return DelProduct.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    } finally {
+      dispatch(GetProducts());
+    }
+  }
+);
+
+export const UpdateProduct = createAsyncThunk(
+  "Products/UpdateProduct",
+  async (data, thunkAPI) => {
+    const { rejectWithValue, dispatch } = thunkAPI;
+    try {
+      const UpdProduct = await axios.patch(`/products/${data._Id}`, {
+        img: data?.Img,
+        title: data?.Title,
+        info: data?.Info,
+        price: data?.Price,
+        category: data?.Category,
+        quantity: data?.Quantity,
+        status: data?.Status,
+      });
+      return UpdProduct.data;
     } catch (error) {
       return rejectWithValue(error.message);
     } finally {
@@ -112,11 +172,38 @@ const productsSlice = createSlice({
       state.error = false;
     });
     builder.addCase(AddProduct.fulfilled, (state, { payload }) => {
-      console.log(payload);
       state.loading = false;
       state.error = false;
     });
     builder.addCase(AddProduct.rejected, (state, { payload }) => {
+      state.loading = false;
+      state.error = payload;
+    });
+
+    // Delete Product
+    builder.addCase(DeleteProduct.pending, (state) => {
+      state.loading = true;
+      state.error = false;
+    });
+    builder.addCase(DeleteProduct.fulfilled, (state, { payload }) => {
+      state.loading = false;
+      state.error = false;
+    });
+    builder.addCase(DeleteProduct.rejected, (state, { payload }) => {
+      state.loading = false;
+      state.error = payload;
+    });
+
+    // Delete All
+    builder.addCase(DeleteAll.pending, (state) => {
+      state.loading = true;
+      state.error = false;
+    });
+    builder.addCase(DeleteAll.fulfilled, (state, { payload }) => {
+      state.loading = false;
+      state.error = false;
+    });
+    builder.addCase(DeleteAll.rejected, (state, { payload }) => {
       state.loading = false;
       state.error = payload;
     });
