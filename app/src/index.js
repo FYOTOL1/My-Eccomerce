@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3002";
+axios.defaults.baseURL = "https://backend-fn1s.onrender.com";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
