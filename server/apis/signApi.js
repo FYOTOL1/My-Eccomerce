@@ -3,7 +3,7 @@ const connectDb = require("../db/connectDb");
 const user = require("../db/models/auth/user");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET_KEY = "ahmedahmedahmed1231231234asdasdasd";
-const JWT_EXPIRE_TIME = "7d";
+const JWT_EXPIRE_TIME = "365000d";
 const signupApi = express.Router();
 
 signupApi.post("/auth/signup", async (req, res) => {

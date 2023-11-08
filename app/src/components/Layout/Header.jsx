@@ -68,7 +68,9 @@ export default function Header() {
               )}
             </div>
             <div className="download">
-              <Link className="Link">download</Link>
+              <Link to={"/admin/users"} className="Link">
+                Dashboard
+              </Link>
             </div>
           </div>
           <div className="list">
