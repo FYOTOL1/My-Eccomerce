@@ -122,6 +122,9 @@
   font-size: 35px;
   letter-spacing: 2px;
 }
+.bigScreen .desc h2 span {
+  color: #00aeff;
+}
 .bigScreen .desc button {
   background: #ffffff;
   color: rgba(0, 0, 0, 0.7215686275);

@@ -60,7 +60,9 @@ export default function bigScreen() {
           </div>
         </div>
         <div className="desc">
-          <h2>Hello</h2>
+          <h2>
+          3a<span>Y</span>ez
+          </h2>
           <button>Get Started</button>
           <div className="info">
             <div className="info_item already_sold">

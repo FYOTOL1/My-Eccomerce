@@ -1,13 +1,11 @@
 .products {
   width: 100%;
   min-height: 100vh;
+  overflow: hidden;
   .cards {
     display: grid;
-    justify-content: space-between;
-    grid-template-columns: repeat(6, 225px);
-    gap: 10px 0;
-    overflow: hidden;
-
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 10px;
     .card {
       display: flex;
       flex-direction: column;
@@ -29,7 +27,7 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          object-fit: cover;
+          object-fit: scale-down;
           width: 100%;
         }
       }
@@ -65,182 +63,23 @@
       }
       &:hover {
         cursor: pointer;
-        filter: brightness(0.9);
-      }
-    }
-  }
-  @media (min-width: 1400px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(6, 225px);
-        gap: 10px 0;
+        scale: 1.04;
+        z-index: 3;
       }
     }
   }
 
-  @media (max-width: 1400px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(5, 245px);
-        gap: 10px 0;
-      }
-    }
+  @media (max-width: 734px) {
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   }
 
-  @media (max-width: 1280px) {
+  @media (max-width: 500px) {
     & {
       .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(5, 225px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 1180px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(4, 245px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 1024px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(4, 225px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 950px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(3, 270px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 850px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(3, 250px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 790px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(3, 225px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 695px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(3, 200px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 630px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(3, 180px);
-        gap: 10px 0;
-        .card {
-          height: 300px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 560px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(2, 250px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 525px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(2, 225px);
-        gap: 10px 0;
-      }
-    }
-  }
-
-  @media (max-width: 475px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(2, 200px);
-        gap: 10px 0;
-        .card {
-          height: 280px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 425px) {
-    & {
-      .cards {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(2, 180px);
-        gap: 10px 0;
-        .card {
-          height: 280px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 385px) {
-    & {
-      .cards {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .card {
-          height: 280px;
-          margin: 0 auto;
+        .card:hover {
+          cursor: pointer;
+          scale: unset;
+          z-index: unset;
         }
       }
     }

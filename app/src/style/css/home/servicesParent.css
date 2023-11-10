@@ -43,7 +43,6 @@
           justify-content: space-between;
   -ms-grid-columns: 225px 10px 225px 10px 225px 10px 225px 10px 225px 10px 225px;
   grid-template-columns: repeat(6, 225px);
-  overflow: hidden;
 }
 .about_services .popular .cards .card,
 .about_services .featured .cards .card {
@@ -129,8 +128,8 @@
 .about_services .popular .cards .card:hover,
 .about_services .featured .cards .card:hover {
   cursor: pointer;
-  -webkit-filter: brightness(0.9);
-          filter: brightness(0.9);
+  scale: 1.08;
+  z-index: 3;
 }
 @media (max-width: 1425px) {
   .about_services .popular .cards,
