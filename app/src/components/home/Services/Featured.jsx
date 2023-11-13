@@ -1,43 +1,56 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../../../style/css/home/servicesParent.css";
-import { GetFeaturedServices } from "../../../Redux/slices/featuredServicesSlice";
+import { Link } from "react-router-dom";
+import { GetProduct } from "../../../Redux/slices/productsSlice";
 
 export default function Featured() {
-  const Store = useSelector((state) => state?.featured);
+  const Store = useSelector((state) => state.products);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(GetFeaturedServices());
+    dispatch(GetProduct());
   }, [dispatch]);
 
   return (
     <div className="featured">
       <h2>featured services</h2>
       <div className="cards">
-        {Store?.data?.length
-          ? Store?.data?.map((e) => (
-              <div key={e._id} className="card">
-                <div className="imgParent">
-                  <img className="img" src={e.img} alt={e.name} />
-                </div>
-                <h3>{e.name}</h3>
-                <div className="desc">
-                  <p>{e.info}</p>
-                </div>
-                <div className="info">
-                  <div className="rate">
-                    <i className="fa-solid fa-star star"></i>
-                    <p>{e?.rate}</p>
+        {Store?.data?.length && Store.loading !== true ? (
+          <div className="cards">
+            {Store.data?.map((d, i) =>
+              i >= 6 ? null : (
+                <Link to={`/products/${d?._id}`} key={d?._id} className="card">
+                  <div className="imgParent">
+                    <img
+                      loading="lazy"
+                      className="img"
+                      src={d?.img}
+                      alt={d?.name}
+                    />
                   </div>
-                  <p className="price">
-                    <span>$</span>
-                    {e.price}
-                  </p>
-                </div>
-              </div>
-            ))
-          : "No Data"}
+                  <h3>{d?.name}</h3>
+                  <div className="desc">
+                    <p>{d?.info}</p>
+                  </div>
+                  <div className="info">
+                    <div className="rate">
+                      <i className="fa-solid fa-star star"></i>
+                      <p>{d?.rate}</p>
+                    </div>
+                    <p className="price">
+                      <span>$</span>
+                      {d?.price}
+                    </p>
+                  </div>
+                </Link>
+              )
+            )}
+          </div>
+        ) : (
+          <div className="load"></div>
+        )}
       </div>
     </div>
   );

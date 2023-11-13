@@ -5,7 +5,12 @@ export default function Offers() {
   return (
     <div className="offers">
       <div className="offer offer_1">
-        <img className="img" src="../../../images/controller.jpg" alt="Error" />
+        <img
+          loading="lazy"
+          className="img"
+          src="../../../images/controller.webp"
+          alt="Error"
+        />
         <div className="details">
           <p>{20}%</p>
           <p>Offer Of Games Accounts</p>
@@ -18,7 +23,7 @@ export default function Offers() {
       <div className="offer offer_2">
         <img
           className="img"
-          src="../../../images/social_media.jpg"
+          src="../../../images/social_media.webp"
           alt="Error"
         />
         <div className="details">
@@ -31,7 +36,12 @@ export default function Offers() {
         </div>
       </div>
       <div className="offer offer_3">
-        <img className="img" src="../../../images/money.jpg" alt="Error" />
+        <img
+          loading="lazy"
+          className="img"
+          src="../../../images/money.webp"
+          alt="Error"
+        />
         <div className="details">
           <p>{75}%</p>
           <p>games money</p>

@@ -3,24 +3,24 @@
   height: 450px;
   width: 100%;
   background-color: #eee;
-  background-image: url("../../../../public/images/stars_of_space.jpg");
+  background-image: url("../../../../public/images/stars_of_space.webp");
   background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   overflow: hidden;
 }
 .deals > .img {
   width: 100%;
   -webkit-filter: brightness(0.7);
-  filter: brightness(0.7);
+          filter: brightness(0.7);
 }
 .deals .deal {
   padding: 0 10px;
@@ -31,10 +31,10 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   gap: 30px;
   overflow-x: scroll;
 }
@@ -57,7 +57,7 @@
   overflow: hidden;
   background: #fff;
   -webkit-box-shadow: 0 0 3px rgba(128, 128, 128, 0.2156862745);
-  box-shadow: 0 0 3px rgba(128, 128, 128, 0.2156862745);
+          box-shadow: 0 0 3px rgba(128, 128, 128, 0.2156862745);
   border-radius: 4px;
   padding: 10px 20px;
 }
@@ -67,7 +67,7 @@
 }
 .deals .deal .cards .card .imgParent .img {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   width: 100% !important;
 }
 .deals .deal .cards .card h3 {
@@ -84,11 +84,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 25px;
 }
 .deals .deal .cards .card .info .rate {
@@ -115,11 +115,11 @@
 @media (max-width: 850px) {
   .deals .deal {
     -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .deals .deal .cards {
-    -ms-grid-columns: (240px) [3];
+    -ms-grid-columns: (240px)[3];
     grid-template-columns: repeat(3, 240px);
   }
   .deals .deal .cards .card:last-child {

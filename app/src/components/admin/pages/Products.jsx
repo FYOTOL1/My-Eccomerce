@@ -20,7 +20,7 @@ export default function Products() {
   const [ShowPopup, setShowPopup] = useState();
   const [PopupAction, setPopupAction] = useState();
   const [_Id, set_Id] = useState("");
-  const [Img, setImg] = useState("../../../../images/dragImg.jpg");
+  const [Img, setImg] = useState("../../../../images/dragImg.webp");
   const [Title, setTitle] = useState();
   const [Category, setCategory] = useState();
   const [Quantity, setQuantity] = useState();
@@ -48,13 +48,12 @@ export default function Products() {
       dispatch(AddProduct({ Img, Title, Category, Quantity, Price, Info }));
       setCategory("");
       setTitle("");
-      setImg("../../../../images/dragImg.jpg");
+      setImg("../../../../images/dragImg.webp");
       setInfo("");
       setPrice(0);
       setQuantity(0);
       setShowPopup(false);
-    } catch (err) {
-    }
+    } catch (err) {}
   };
   const updateProduct = () => {
     try {
@@ -72,14 +71,13 @@ export default function Products() {
       );
       setCategory("");
       setTitle("");
-      setImg("../../../../images/dragImg.jpg");
+      setImg("../../../../images/dragImg.webp");
       setInfo("");
       setPrice(0);
       setQuantity(0);
       setStatus(false);
       setShowPopup(false);
-    } catch (error) {
-    }
+    } catch (error) {}
   };
   const DeleteProd = ({ _id }) => {
     dispatch(DeleteProduct(_id));
@@ -97,7 +95,7 @@ export default function Products() {
               <div className="popup">
                 <div className="img">
                   <label htmlFor="img">
-                    <img src={Img} alt="Error" />
+                    <img loading="lazy" src={Img} alt="Error" />
                   </label>
                   <input
                     onChange={(e) => imageReader(e)}
@@ -191,7 +189,7 @@ export default function Products() {
               <div className="popup">
                 <div className="img">
                   <label htmlFor="img">
-                    <img src={Img} alt="Error" />
+                    <img loading="lazy" src={Img} alt="Error" />
                   </label>
                   <input
                     onChange={(e) => imageReader(e)}
@@ -285,7 +283,7 @@ export default function Products() {
                     onClick={(e) => {
                       setCategory("");
                       setTitle("");
-                      setImg("../../../../images/dragImg.jpg");
+                      setImg("../../../../images/dragImg.webp");
                       setInfo("");
                       setPrice(0);
                       setQuantity(0);
@@ -301,8 +299,8 @@ export default function Products() {
               </div>
             </div>
           ) : null}
-          <div className="products">
-            <div className="products-cont">
+          <div className="products-admin">
+            <div className="products-cont-admin">
               <header>
                 <section className="actions">
                   <div
@@ -361,7 +359,7 @@ export default function Products() {
                       >
                         <tr>
                           <td className="img">
-                            <img src={e.img} alt="Error" />
+                            <img srcSet={e.img} loading="lazy" alt="Error" />
                           </td>
                           <td>{e?.title}</td>
                           <td>{e?.category}</td>

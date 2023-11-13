@@ -6,7 +6,12 @@ export default function bigScreen() {
     <>
       <div className="bigScreen">
         <div className="commentCards">
-          <img className="img" src="../../../images/apple.jpg" alt="Error" />
+          <img
+            loading="lazy"
+            className="img"
+            src="../../../images/apple.webp"
+            alt="Error"
+          />
           <div className="card card1">
             <div className="user">
               <i className="fa-regular fa-circle-user"></i>
@@ -61,7 +66,7 @@ export default function bigScreen() {
         </div>
         <div className="desc">
           <h2>
-          3a<span>Y</span>ez
+            3a<span>Y</span>ez
           </h2>
           <button>Get Started</button>
           <div className="info">

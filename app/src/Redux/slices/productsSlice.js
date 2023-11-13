@@ -114,6 +114,7 @@ const productsSlice = createSlice({
   initialState: {
     data: [],
     filter: [],
+    products_filter: [],
     loading: false,
     error: null,
   },
@@ -131,6 +132,37 @@ const productsSlice = createSlice({
           );
         }
       }
+    },
+
+    products_search_user: (state, { payload }) => {
+      if (payload.find_by === "title") {
+        state.products_filter = state?.data?.filter((e) =>
+          e?.title?.toLowerCase()?.includes(payload?.value?.toLowerCase())
+        );
+        console.log(state.products_filter);
+      } else if (payload.find_by === "category") {
+        state.products_filter = state?.data?.filter((e) =>
+          e?.category?.toLowerCase()?.includes(payload?.value?.toLowerCase())
+        );
+        console.log(state.products_filter);
+      } else if (payload.find_by === "price") {
+        state.products_filter = state?.data?.filter(
+          (e) => e?.price >= Number(payload.value)
+        );
+        console.log(state.products_filter);
+        return;
+      } else if (payload.find_by === "count") {
+        state.products_filter = state?.data?.filter(
+          (e, i) => i < Number(payload.value)
+        );
+        console.log(state.products_filter);
+      } else {
+        state.products_filter = [];
+      }
+    },
+
+    products_search_user_un_filter: (state, { payload }) => {
+      state.products_filter = [];
     },
   },
 
@@ -210,6 +242,10 @@ const productsSlice = createSlice({
   },
 });
 
-export const { productsSearch } = productsSlice.actions;
+export const {
+  productsSearch,
+  products_search_user,
+  products_search_user_un_filter,
+} = productsSlice.actions;
 
 export default productsSlice.reducer;

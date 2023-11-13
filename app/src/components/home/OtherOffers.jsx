@@ -8,21 +8,21 @@ export default function OtherOffers() {
         <div className="card">
           <img
             className="img"
-            src="../../../images/apple-watch.jpg"
+            src="../../../images/apple-watch.webp"
             alt="Error"
           />
         </div>
         <div className="card">
           <img
             className="img"
-            src="../../../images/apple_iphone.jpg"
+            src="../../../images/apple_iphone.webp"
             alt="Error"
           />
         </div>
         <div className="card">
           <img
             className="img"
-            src="../../../images/xbox-controller.jpg"
+            src="../../../images/xbox-controller.webp"
             alt="Error"
           />
         </div>

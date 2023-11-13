@@ -112,19 +112,17 @@
   width: 100%;
   letter-spacing: 0.5px;
   color: rgba(0, 0, 0, 0.746);
-  font-weight: 600;
+  font-weight: normal;
+  font-size: 15px;
 }
-.header .options .list {
-  display: none;
-  cursor: pointer;
-  padding: 3px;
+.header .options .row li {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.header .options .list:hover {
+.header .options .row li:hover {
   opacity: 0.7;
 }
-.header .options .status {
+.header .options .row .status {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +133,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.header .options .status .Link {
+.header .options .row .status .Link {
   font-size: 15px;
   font-weight: normal;
   border: none;
@@ -145,25 +143,20 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.header .options .status .Link:hover {
+.header .options .row .status .Link:hover {
   opacity: 0.7;
 }
-.header .options .status p {
+.header .options .row .status p {
   padding: 0 5px;
 }
-.header .options .download {
+.header .options .list {
+  display: none;
+  cursor: pointer;
+  padding: 3px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.header .options .download .Link {
-  font-weight: normal;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-  background: transparent;
-  padding: 5px;
-}
-.header .options .download:hover {
+.header .options .list:hover {
   opacity: 0.7;
 }
 .header .drop_list {

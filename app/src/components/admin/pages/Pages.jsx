@@ -2,6 +2,7 @@ import React from "react";
 import LayoutAdmin from "../LayoutAdmin";
 import LOADING from "../../LOADING";
 import "../../../style/css/admin/pages.css";
+import { Link } from "react-router-dom";
 
 export default function Pages() {
   return (
@@ -9,18 +10,38 @@ export default function Pages() {
       <LayoutAdmin pageName={"pages"}>
         <LOADING>
           <div className="pages">
-            <div className="card">
-              <img src="../../../../images/homepageimg.png" alt="" />
+            <Link to={"/"} className="card">
+              <img
+                loading="lazy"
+                src="../../../../images/homepageimg.webp"
+                alt="Error"
+              />
               <h1>Home Page</h1>
-            </div>
-            <div className="card">
-              <img src="../../../../images/productspageimg.png" alt="" />
+            </Link>
+            <Link to={"/admin/products"} className="card">
+              <img
+                loading="lazy"
+                src="../../../../images/productspageimg.webp"
+                alt="Error"
+              />
               <h1>Products Dash</h1>
-            </div>
-            <div className="card">
-              <img src="../../../../images/userspageimg.png" alt="" />
+            </Link>
+            <Link to={"/admin/users"} className="card">
+              <img
+                loading="lazy"
+                src="../../../../images/userspageimg.webp"
+                alt="Error"
+              />
               <h1>Users Dash</h1>
-            </div>
+            </Link>
+            <Link to={"/products"} className="card">
+              <img
+                loading="lazy"
+                src="../../../../images/productspageimg.png"
+                alt="Error"
+              />
+              <h1>Products Page</h1>
+            </Link>
           </div>
         </LOADING>
       </LayoutAdmin>

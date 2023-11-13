@@ -10,7 +10,12 @@ export default function Deals() {
   }, []);
   return (
     <div className="deals">
-      <img className="img" src="../../../images/stars_of_space.jpg" alt="" />
+      <img
+        loading="lazy"
+        className="img"
+        src="../../../images/stars_of_space.webp"
+        alt=""
+      />
       <div className="deal">
         <div className="text">
           <p>Deals Of The Day</p>
@@ -22,7 +27,7 @@ export default function Deals() {
               <div className="imgParent">
                 <img
                   className="img"
-                  src="../../../images/mac_book.jpg"
+                  src="../../../images/mac_book.webp"
                   alt="Error"
                 />
               </div>
@@ -48,7 +53,7 @@ export default function Deals() {
               <div className="imgParent">
                 <img
                   className="img"
-                  src="../../../images/mac_book.jpg"
+                  src="../../../images/mac_book.webp"
                   alt="Error"
                 />
               </div>
@@ -74,7 +79,7 @@ export default function Deals() {
               <div className="imgParent">
                 <img
                   className="img"
-                  src="../../../images/mac_book.jpg"
+                  src="../../../images/mac_book.webp"
                   alt="Error"
                 />
               </div>
@@ -100,7 +105,7 @@ export default function Deals() {
               <div className="imgParent">
                 <img
                   className="img"
-                  src="../../../images/mac_book.jpg"
+                  src="../../../images/mac_book.webp"
                   alt="Error"
                 />
               </div>

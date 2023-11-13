@@ -73,15 +73,6 @@ export default function NavigationList({ pageName }) {
               className="fa-solid fa-pager"
             ></i>
           </li>
-          <li>
-            <p>
-              <Link to="/admin/containers">Containers</Link>
-            </p>
-            <i
-              style={pageName === "containers" ? { color: " #4169e1d5" } : null}
-              className="fa-solid fa-box-open"
-            ></i>
-          </li>
         </ul>
       </div>
     </>

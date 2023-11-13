@@ -10,6 +10,7 @@
     "setactives",
     "setmsg",
     "setphone",
-    "unshow"
+    "unshow",
+    "webp"
   ]
 }

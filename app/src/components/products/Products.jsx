@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../../style/css/products/products.css";
-import { GetProducts } from "../../Redux/slices/productsSlice";
+import {
+  GetProducts,
+  products_search_user_un_filter,
+} from "../../Redux/slices/productsSlice";
 import AUTH from "../AUTH";
-import LOADING from "../LOADING";
+import { Link } from "react-router-dom";
 
-export default function Products() {
+function Products() {
   const Store = useSelector((state) => state.products);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -13,42 +16,74 @@ export default function Products() {
   }, [dispatch]);
   return (
     <AUTH type="user">
-      <LOADING>
-        <div className="products">
-          <br />
-          <h2>Products</h2>
-          <br />
-          <div className="cards">
-            {Store?.data?.length
-              ? Store?.data.map((e) => (
-                  <div className="card">
-                    <div className="imgParent">
-                      <img
-                        loading="lazy"
-                        className="img"
-                        src={e?.img}
-                        alt="Error"
-                      />
-                    </div>
-                    <h3>{e?.title}</h3>
-                    <div className="desc">
-                      <p>{e?.info}</p>
-                    </div>
-                    <div className="info">
-                      <div className="rate">
-                        <i className="fa-solid fa-star star"></i>
-                        <p>{e?.rate}</p>
-                      </div>
-                      <p className="price">
-                        <span>{`${e?.price}$`}</span>
-                      </p>
-                    </div>
+      <div className="products-user">
+        <div className="cards">
+          {Store?.data?.length && Store.loading !== true ? (
+            Store?.products_filter?.length ? (
+              Store?.products_filter.map((e) => (
+                <Link key={e?._id} to={`/products/${e._id}`} className="card">
+                  <div className="imgParent">
+                    <img
+                      loading="lazy"
+                      className="img"
+                      src={e?.img}
+                      alt="Error"
+                    />
                   </div>
-                ))
-              : "null"}
-          </div>
+                  <h3>{e?.title}</h3>
+                  <div className="desc">
+                    <p>{e?.info}</p>
+                  </div>
+                  <div className="info">
+                    <div className="rate">
+                      <i className="fa-solid fa-star star"></i>
+                      <p>{e?.rate}</p>
+                    </div>
+                    <p className="price">
+                      <span>{`${e?.price}$`}</span>
+                    </p>
+                  </div>
+                </Link>
+              ))
+            ) : (
+              Store?.data.map((e) => (
+                <Link
+                  onClick={(r) => products_search_user_un_filter()}
+                  key={e?._id}
+                  to={`/products/${e._id}`}
+                  className="card"
+                >
+                  <div className="imgParent">
+                    <img
+                      loading="lazy"
+                      className="img"
+                      src={e?.img}
+                      alt="Error"
+                    />
+                  </div>
+                  <h3>{e?.title}</h3>
+                  <div className="desc">
+                    <p>{e?.info}</p>
+                  </div>
+                  <div className="info">
+                    <div className="rate">
+                      <i className="fa-solid fa-star star"></i>
+                      <p>{e?.rate}</p>
+                    </div>
+                    <p className="price">
+                      <span>{`${e?.price}$`}</span>
+                    </p>
+                  </div>
+                </Link>
+              ))
+            )
+          ) : (
+            <div className="load"></div>
+          )}
         </div>
-      </LOADING>
+      </div>
     </AUTH>
   );
 }
+
+export default memo(Products);

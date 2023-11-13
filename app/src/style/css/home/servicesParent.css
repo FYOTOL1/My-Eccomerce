@@ -26,6 +26,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 40px;
+  position: relative;
 }
 .about_services .popular h2,
 .about_services .featured h2 {
@@ -128,8 +129,62 @@
 .about_services .popular .cards .card:hover,
 .about_services .featured .cards .card:hover {
   cursor: pointer;
-  scale: 1.08;
+  scale: 1.03;
   z-index: 3;
+}
+.about_services .popular .load,
+.about_services .featured .load {
+  width: 40px;
+  height: 40px;
+  outline: 6px solid gray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-animation: loader 0.005s infinite linear;
+          animation: loader 0.005s infinite linear;
+}
+.about_services .popular .load::after,
+.about_services .featured .load::after {
+  content: "";
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -65%);
+          transform: translate(-50%, -65%);
+  background-color: #f4f5f9;
+}
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 @media (max-width: 1425px) {
   .about_services .popular .cards,

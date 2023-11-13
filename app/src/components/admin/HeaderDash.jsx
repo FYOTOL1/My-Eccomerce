@@ -45,7 +45,7 @@ export default function HeaderDash({ type }) {
               <i className="fa-regular fa-bell"></i>
             </div>
             <div className="circle profile">
-              <img src="../../../images/logo.png" alt="" />
+              <img loading="lazy" src="../../../images/logo.webp" alt="" />
             </div>
           </div>
         </div>

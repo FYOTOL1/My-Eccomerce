@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Offers from "../components/home/Offers";
 import ServicesParent from "../components/home/Services/ServicesParent";
 import BigScreen from "../components/home/bigScreen";
@@ -7,7 +7,7 @@ import OtherOffers from "../components/home/OtherOffers";
 import Layout from "../components/Layout/Layout";
 import AUTH from "../components/AUTH";
 
-export default function Home() {
+function Home() {
   return (
     <>
       <AUTH type={"user"}>
@@ -24,3 +24,5 @@ export default function Home() {
     </>
   );
 }
+
+export default memo(Home);

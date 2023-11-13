@@ -72,48 +72,40 @@
       width: 100%;
       letter-spacing: 0.5px;
       color: rgba(0, 0, 0, 0.746);
-      font-weight: 600;
+      font-weight: normal;
+      font-size: 15px;
+      li {
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .Link {
+          font-size: 15px;
+          font-weight: normal;
+          border: none;
+          cursor: pointer;
+          background: transparent;
+          padding: 5px;
+          transition: all 0.3s;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        & p {
+          padding: 0 5px;
+        }
+      }
     }
     .list {
       display: none;
       cursor: pointer;
       padding: 3px;
       transition: all 0.3s;
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-    .status {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .Link {
-        font-size: 15px;
-        font-weight: normal;
-        border: none;
-        cursor: pointer;
-        background: transparent;
-        padding: 5px;
-        transition: all 0.3s;
-        &:hover {
-          opacity: 0.7;
-        }
-      }
-      & p {
-        padding: 0 5px;
-      }
-    }
-    .download {
-      transition: all 0.3s;
-
-      .Link {
-        font-weight: normal;
-        font-size: 15px;
-        border: none;
-        cursor: pointer;
-        background: transparent;
-        padding: 5px;
-      }
       &:hover {
         opacity: 0.7;
       }

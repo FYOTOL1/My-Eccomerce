@@ -1,0 +1,48 @@
+.products-cont {
+  margin-top: 30px;
+  width: 100%;
+  .header-cont {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    .filter {
+      display: flex;
+      gap: 15px;
+      select {
+        padding: 7px 10px;
+        border: none;
+        outline: 1px solid #eee;
+        box-shadow: 0 0 3px #dcdcdc47;
+        font-size: 17px;
+        border-radius: 1px;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+          background-color: #eeeeee8e;
+        }
+      }
+    }
+    .search {
+      position: relative;
+      height: 33px;
+      max-width: 250px;
+      width: 100%;
+      box-shadow: 0px 0px 7px rgba(220, 220, 220, 0.4588235294);
+      border-radius: 1px;
+      overflow: hidden;
+      outline: 1px solid #dcdcdcb7;
+      input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 0px 5px;
+        outline: none;
+        border: none;
+        font-size: 20px;
+      }
+    }
+  }
+}

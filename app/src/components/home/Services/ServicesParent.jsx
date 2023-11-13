@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import Popular from "./Popular";
 import Featured from "./Featured";
 import "../../../style/css/home/servicesParent.css";
 
-export default function PopularProducts() {
+function PopularProducts() {
   return (
     <div className="about_services">
       <Popular />
@@ -11,3 +11,5 @@ export default function PopularProducts() {
     </div>
   );
 }
+
+export default memo(PopularProducts);

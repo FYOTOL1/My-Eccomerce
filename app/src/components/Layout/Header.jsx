@@ -35,7 +35,9 @@ export default function Header() {
       <div className="header">
         <div className="logo">
           <p>
-            <span>3</span>a<span>Y</span>ez
+            <Link to={"/"}>
+              <span>3</span>a<span>Y</span>ez
+            </Link>
           </p>
         </div>
         <div className="search">
@@ -45,7 +47,7 @@ export default function Header() {
           <input id="search" placeholder="search products" type="text" />
         </div>
         <div className="options">
-          <div className="row">
+          <ul className="row">
             <div className="status">
               {Authed ? (
                 <button
@@ -67,12 +69,17 @@ export default function Header() {
                 </>
               )}
             </div>
-            <div className="download">
+            <li>
               <Link to={"/admin/users"} className="Link">
                 Dashboard
               </Link>
-            </div>
-          </div>
+            </li>
+            <li>
+              <Link to={"/products"} className="Link">
+                Products
+              </Link>
+            </li>
+          </ul>
           <div className="list">
             {dropList ? (
               <i

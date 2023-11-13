@@ -1,46 +1,59 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import "../../../style/css/home/servicesParent.css";
 import { useDispatch, useSelector } from "react-redux";
-import { GetPopularServices } from "../../../Redux/slices/popularServicesSlice";
+import { GetProducts } from "../../../Redux/slices/productsSlice";
+import { Link } from "react-router-dom";
 
-export default function Popular() {
-  const Store = useSelector((state) => state.popular);
+function Popular() {
+  const Store = useSelector((state) => state.products);
   const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(GetPopularServices());
+    dispatch(GetProducts());
   }, [dispatch]);
+
+  useEffect(() => {}, [Store?.data]);
 
   return (
     <>
       <div className="popular">
         <h2>popular services</h2>
-        <div className="cards">
-          {Store?.data?.length
-            ? Store?.data?.map((e) => (
-                <div key={e?._id} className="card">
+        {Store?.data?.length && Store.loading !== true ? (
+          <div className="cards">
+            {Store.data?.map((d, i) =>
+              i >= 6 ? null : (
+                <Link to={`/products/${d?._id}`} key={d?._id} className="card">
                   <div className="imgParent">
-                    <img className="img" src={e?.img} alt={e?.name} />
+                    <img
+                      loading="lazy"
+                      className="img"
+                      src={d?.img}
+                      alt={d?.name}
+                    />
                   </div>
-                  <h3>{e?.name}</h3>
+                  <h3>{d?.name}</h3>
                   <div className="desc">
-                    <p>{e?.info}</p>
+                    <p>{d?.info}</p>
                   </div>
                   <div className="info">
                     <div className="rate">
                       <i className="fa-solid fa-star star"></i>
-                      <p>{e?.rate}</p>
+                      <p>{d?.rate}</p>
                     </div>
                     <p className="price">
                       <span>$</span>
-                      {e?.price}
+                      {d?.price}
                     </p>
                   </div>
-                </div>
-              ))
-            : "No Data"}
-        </div>
+                </Link>
+              )
+            )}
+          </div>
+        ) : (
+          <div className="load"></div>
+        )}
       </div>
     </>
   );
 }
+
+export default memo(Popular);

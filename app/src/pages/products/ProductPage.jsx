@@ -27,7 +27,7 @@ export default function Product() {
             <div className="product-cont">
               <>
                 <div className="img">
-                  <img src={p?.img} alt="Error" />
+                  <img loading="lazy" src={p?.img} alt="Error" />
                 </div>
                 <div className="details">
                   <div className="title">
