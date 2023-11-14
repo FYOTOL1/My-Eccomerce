@@ -6,8 +6,6 @@ export default function Cart() {
   const [data, setdata] = useState([]);
   const [product_info, set_product_info] = useState({});
 
-  console.log(product_info);
-
   useEffect(() => {
     const arr_data = localStorage.getItem("cart");
     if (arr_data?.length >= 1) {

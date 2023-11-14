@@ -132,32 +132,6 @@
   scale: 1.03;
   z-index: 3;
 }
-.about_services .popular .load,
-.about_services .featured .load {
-  width: 40px;
-  height: 40px;
-  outline: 6px solid gray;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border-radius: 50%;
-  -webkit-animation: loader 0.005s infinite linear;
-          animation: loader 0.005s infinite linear;
-}
-.about_services .popular .load::after,
-.about_services .featured .load::after {
-  content: "";
-  width: 20px;
-  height: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -65%);
-          transform: translate(-50%, -65%);
-  background-color: #f4f5f9;
-}
 @-webkit-keyframes loader {
   0% {
     -webkit-transform: rotate(0deg);

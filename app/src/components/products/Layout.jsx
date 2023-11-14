@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import Header from "../Layout/Header";
 import "../../style/css/products/layout.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { products_search_user } from "../../Redux/slices/productsSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Products from "./Products";
 
-export default function Layout({ children }) {
+function Layout() {
+  const Store = useSelector((state) => state.products);
   const [count_of_cart, set_count_of_cart] = useState([]);
   const dispatch = useDispatch();
 
@@ -78,9 +80,9 @@ export default function Layout({ children }) {
                 <option value="400">{">999+"}</option>
                 <option value="un">unlimited</option>
               </select>
-              <Link to={"/products/cart"} className="cart">
+              <Link to={"/products/cart"} className="cart-link">
                 <p>{count_of_cart?.length}</p>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i className="fa-solid fa-cart-shopping"></i>
               </Link>
             </div>
             <div className="search">
@@ -91,11 +93,17 @@ export default function Layout({ children }) {
                 autoFocus="on"
                 onChange={(e) => filter_fun(e.target.value)}
               />
+              <Link to={"/products/cart"} className="cart-search">
+                <p>{count_of_cart?.length}</p>
+                <i className="fa-solid fa-cart-shopping"></i>
+              </Link>
             </div>
           </div>
-          {children}
+          <Products Store={Store} />
         </div>
       </div>
     </>
   );
 }
+
+export default memo(Layout);

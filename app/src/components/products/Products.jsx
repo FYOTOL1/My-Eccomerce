@@ -1,5 +1,5 @@
 import React, { memo, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "../../style/css/products/products.css";
 import {
   GetProducts,
@@ -9,15 +9,17 @@ import AUTH from "../AUTH";
 import { Link } from "react-router-dom";
 import LOADING from "../LOADING";
 
-function Products() {
-  const Store = useSelector((state) => state.products);
+function Products({ Store }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetProducts());
   }, [dispatch]);
   return (
     <AUTH type="user">
-      <LOADING>
+      <LOADING
+        loader_type={"circle"}
+        condition={Store.loading || Store.data?.length === 0}
+      >
         <div className="products-user">
           <div className="cards">
             {Store?.data?.length && Store.loading !== true ? (

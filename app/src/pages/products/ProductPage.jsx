@@ -41,36 +41,34 @@ export default function Product() {
   return (
     <>
       <AUTH type={"user"}>
-        <LOADING>
-          <div className="product">
-            <div className="product-cont">
-              <>
-                <div className="img">
-                  <img loading="lazy" src={p?.img} alt="Error" />
+        <div className="product">
+          <div className="product-cont">
+            <>
+              <div className="img">
+                <img loading="lazy" src={p?.img} alt="Error" />
+              </div>
+              <div className="details">
+                <div className="title">
+                  <h3>{p?.title}</h3>
                 </div>
-                <div className="details">
-                  <div className="title">
-                    <h3>{p?.title}</h3>
-                  </div>
-                  <div className="info type">Category: {p?.category}</div>
-                  <div className="info">Info: {p?.info}</div>
-                  <div className="info">Quantity: {p?.quantity}</div>
-                  <div className="price">
-                    <p>{p.price}$</p>
-                  </div>
-                  <div className="rate">
-                    <i className="fa-solid fa-star star"></i>
-                    <p>{p?.rate}</p>
-                  </div>
-                  <div className="add-cart">
-                    <button onClick={(e) => navigate("/products")}>Back</button>
-                    <button onClick={(e) => add_to_cart(p)}>To Cart</button>
-                  </div>
+                <div className="info type">Category: {p?.category}</div>
+                <div className="info">Info: {p?.info}</div>
+                <div className="info">Quantity: {p?.quantity}</div>
+                <div className="price">
+                  <p>{p.price}$</p>
                 </div>
-              </>
-            </div>
+                <div className="rate">
+                  <i className="fa-solid fa-star star"></i>
+                  <p>{p?.rate}</p>
+                </div>
+                <div className="add-cart">
+                  <button onClick={(e) => navigate("/products")}>Back</button>
+                  <button onClick={(e) => add_to_cart(p)}>To Cart</button>
+                </div>
+              </div>
+            </>
           </div>
-        </LOADING>
+        </div>
       </AUTH>
     </>
   );
