@@ -7,14 +7,15 @@
   .product-cont {
     display: flex;
     justify-content: space-between;
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
-    max-height: 700px;
+    max-height: 600px;
     height: 100%;
-    background-color: #eee;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: 10px 10px 13px #0000001f;
+    box-shadow: 0px 0px 20px #00000015;
+    padding: 0 5px;
     .img {
       position: relative;
       height: 500px;
@@ -47,7 +48,7 @@
       .price {
         font-size: 50px;
         p {
-          color: #c8c752;
+          color: #444;
         }
       }
       .rate {
@@ -58,19 +59,27 @@
         }
       }
       .add-cart {
+        display: flex;
+        gap: 10px;
         button {
-          width: 100%;
+          display: block;
+          width: fit-content;
           height: 100%;
           font-size: 25px;
           padding: 1px 29px;
           border-radius: 5px;
-          box-shadow: 4px 4px 0 #000000a3;
-          color: #333;
+          background-color: rgba(58, 226, 32, 0.826);
+          color: ghostwhite;
+          border: none;
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.149);
           cursor: pointer;
           transition: all 0.3s;
           &:hover {
-            color: black;
             box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.297);
+          }
+          &:nth-child(1) {
+            background-color: rgba(226, 44, 44, 0.777);
+            color: ghostwhite;
           }
         }
       }

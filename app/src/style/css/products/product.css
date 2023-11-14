@@ -18,15 +18,16 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
-  max-height: 700px;
+  max-height: 600px;
   height: 100%;
-  background-color: #eee;
-  border-radius: 10px;
+  background-color: white;
+  border-radius: 2px;
   overflow: hidden;
-  -webkit-box-shadow: 10px 10px 13px rgba(0, 0, 0, 0.1215686275);
-          box-shadow: 10px 10px 13px rgba(0, 0, 0, 0.1215686275);
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.0823529412);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.0823529412);
+  padding: 0 5px;
 }
 .product .product-cont .img {
   position: relative;
@@ -77,7 +78,7 @@
   font-size: 50px;
 }
 .product .product-cont .details .price p {
-  color: #c8c752;
+  color: #444;
 }
 .product .product-cont .details .rate {
   display: -webkit-box;
@@ -88,23 +89,37 @@
 .product .product-cont .details .rate i {
   color: gold;
 }
+.product .product-cont .details .add-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
 .product .product-cont .details .add-cart button {
-  width: 100%;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 100%;
   font-size: 25px;
   padding: 1px 29px;
   border-radius: 5px;
-  -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6392156863);
-          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6392156863);
-  color: #333;
+  background-color: rgba(58, 226, 32, 0.826);
+  color: ghostwhite;
+  border: none;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.149);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.149);
   cursor: pointer;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .product .product-cont .details .add-cart button:hover {
-  color: black;
   -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.297);
           box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.297);
+}
+.product .product-cont .details .add-cart button:nth-child(1) {
+  background-color: rgba(226, 44, 44, 0.777);
+  color: ghostwhite;
 }
 @media (max-width: 853px) {
   .product .product-cont {

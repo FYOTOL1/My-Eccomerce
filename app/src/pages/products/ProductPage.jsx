@@ -19,6 +19,25 @@ export default function Product() {
     }
   }, [dispatch, navigate, params.id, product?.error]);
 
+  const add_to_cart = (e) => {
+    const get_cart_from_local_storage = localStorage.getItem("cart");
+
+    const isset = JSON.parse(get_cart_from_local_storage)?.filter(
+      (p) => p?._id === e?._id
+    );
+    if (isset?.length) {
+      alert("Product Already Exist");
+    } else {
+      alert("Added Successfully");
+      const get_cart_products = JSON.parse(localStorage.getItem("cart"));
+      if (get_cart_products?.length) {
+        localStorage.setItem("cart", JSON.stringify([e, ...get_cart_products]));
+      } else {
+        localStorage.setItem("cart", JSON.stringify([e]));
+      }
+    }
+  };
+
   return (
     <>
       <AUTH type={"user"}>
@@ -33,8 +52,9 @@ export default function Product() {
                   <div className="title">
                     <h3>{p?.title}</h3>
                   </div>
-                  <div className="info type">{p?.type}</div>
-                  <div className="info">{p?.info}</div>
+                  <div className="info type">Category: {p?.category}</div>
+                  <div className="info">Info: {p?.info}</div>
+                  <div className="info">Quantity: {p?.quantity}</div>
                   <div className="price">
                     <p>{p.price}$</p>
                   </div>
@@ -43,7 +63,8 @@ export default function Product() {
                     <p>{p?.rate}</p>
                   </div>
                   <div className="add-cart">
-                    <button>To Cart</button>
+                    <button onClick={(e) => navigate("/products")}>Back</button>
+                    <button onClick={(e) => add_to_cart(p)}>To Cart</button>
                   </div>
                 </div>
               </>
